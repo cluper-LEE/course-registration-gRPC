@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.cluper.course_registration";
+option java_outer_classname = "University";
+
+package university;
+
+service SearchService{
+	rpc GetAllStudents(Empty) returns (StudentResponse);
+	rpc GetAllCourses(Empty) returns (CourseResponse);
+}
+
+message StudetRequest{
+	Student student = 1;
+}
+
+message StudentResponse{
+	repeated Student students = 1;
+}
+
+message CourseResponse{
+	repeated Course course = 1;
+}
+
+message Student {
+	string student_id = 1;
+	string last_name = 2;
+	string first_name = 3;
+	repeated Course courses = 4;
+}
+
+message Course{
+	string course_id = 1;
+	string prof_name = 2;
+	string course_name = 3;
+}
+
+message Empty{
+
+}
