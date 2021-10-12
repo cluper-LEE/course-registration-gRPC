@@ -4,25 +4,26 @@
 package com.cluper.course_registration;
 
 /**
- * Protobuf type {@code university.StudetRequest}
+ * Protobuf type {@code university.ResponseMessage}
  */
-public  final class StudetRequest extends
+public  final class ResponseMessage extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:university.StudetRequest)
-    StudetRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:university.ResponseMessage)
+    ResponseMessageOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use StudetRequest.newBuilder() to construct.
-  private StudetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ResponseMessage.newBuilder() to construct.
+  private ResponseMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private StudetRequest() {
+  private ResponseMessage() {
+    message_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new StudetRequest();
+    return new ResponseMessage();
   }
 
   @java.lang.Override
@@ -30,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private StudetRequest(
+  private ResponseMessage(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -48,17 +49,15 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.cluper.course_registration.Student.Builder subBuilder = null;
-            if (student_ != null) {
-              subBuilder = student_.toBuilder();
-            }
-            student_ = input.readMessage(com.cluper.course_registration.Student.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(student_);
-              student_ = subBuilder.buildPartial();
-            }
+          case 8: {
 
+            success_ = input.readBool();
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            message_ = s;
             break;
           }
           default: {
@@ -82,38 +81,61 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.cluper.course_registration.University.internal_static_university_StudetRequest_descriptor;
+    return com.cluper.course_registration.University.internal_static_university_ResponseMessage_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.cluper.course_registration.University.internal_static_university_StudetRequest_fieldAccessorTable
+    return com.cluper.course_registration.University.internal_static_university_ResponseMessage_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.cluper.course_registration.StudetRequest.class, com.cluper.course_registration.StudetRequest.Builder.class);
+            com.cluper.course_registration.ResponseMessage.class, com.cluper.course_registration.ResponseMessage.Builder.class);
   }
 
-  public static final int STUDENT_FIELD_NUMBER = 1;
-  private com.cluper.course_registration.Student student_;
+  public static final int SUCCESS_FIELD_NUMBER = 1;
+  private boolean success_;
   /**
-   * <code>.university.Student student = 1;</code>
-   * @return Whether the student field is set.
+   * <code>bool success = 1;</code>
+   * @return The success.
    */
-  public boolean hasStudent() {
-    return student_ != null;
+  public boolean getSuccess() {
+    return success_;
+  }
+
+  public static final int MESSAGE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object message_;
+  /**
+   * <code>string message = 2;</code>
+   * @return The message.
+   */
+  public java.lang.String getMessage() {
+    java.lang.Object ref = message_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      message_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.university.Student student = 1;</code>
-   * @return The student.
+   * <code>string message = 2;</code>
+   * @return The bytes for message.
    */
-  public com.cluper.course_registration.Student getStudent() {
-    return student_ == null ? com.cluper.course_registration.Student.getDefaultInstance() : student_;
-  }
-  /**
-   * <code>.university.Student student = 1;</code>
-   */
-  public com.cluper.course_registration.StudentOrBuilder getStudentOrBuilder() {
-    return getStudent();
+  public com.google.protobuf.ByteString
+      getMessageBytes() {
+    java.lang.Object ref = message_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      message_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -130,8 +152,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (student_ != null) {
-      output.writeMessage(1, getStudent());
+    if (success_ != false) {
+      output.writeBool(1, success_);
+    }
+    if (!getMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
     }
     unknownFields.writeTo(output);
   }
@@ -142,9 +167,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (student_ != null) {
+    if (success_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getStudent());
+        .computeBoolSize(1, success_);
+    }
+    if (!getMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -156,16 +184,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.cluper.course_registration.StudetRequest)) {
+    if (!(obj instanceof com.cluper.course_registration.ResponseMessage)) {
       return super.equals(obj);
     }
-    com.cluper.course_registration.StudetRequest other = (com.cluper.course_registration.StudetRequest) obj;
+    com.cluper.course_registration.ResponseMessage other = (com.cluper.course_registration.ResponseMessage) obj;
 
-    if (hasStudent() != other.hasStudent()) return false;
-    if (hasStudent()) {
-      if (!getStudent()
-          .equals(other.getStudent())) return false;
-    }
+    if (getSuccess()
+        != other.getSuccess()) return false;
+    if (!getMessage()
+        .equals(other.getMessage())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -177,78 +204,79 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasStudent()) {
-      hash = (37 * hash) + STUDENT_FIELD_NUMBER;
-      hash = (53 * hash) + getStudent().hashCode();
-    }
+    hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getSuccess());
+    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.cluper.course_registration.StudetRequest parseFrom(
+  public static com.cluper.course_registration.ResponseMessage parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.cluper.course_registration.StudetRequest parseFrom(
+  public static com.cluper.course_registration.ResponseMessage parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.cluper.course_registration.StudetRequest parseFrom(
+  public static com.cluper.course_registration.ResponseMessage parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.cluper.course_registration.StudetRequest parseFrom(
+  public static com.cluper.course_registration.ResponseMessage parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.cluper.course_registration.StudetRequest parseFrom(byte[] data)
+  public static com.cluper.course_registration.ResponseMessage parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.cluper.course_registration.StudetRequest parseFrom(
+  public static com.cluper.course_registration.ResponseMessage parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.cluper.course_registration.StudetRequest parseFrom(java.io.InputStream input)
+  public static com.cluper.course_registration.ResponseMessage parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.cluper.course_registration.StudetRequest parseFrom(
+  public static com.cluper.course_registration.ResponseMessage parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.cluper.course_registration.StudetRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.cluper.course_registration.ResponseMessage parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.cluper.course_registration.StudetRequest parseDelimitedFrom(
+  public static com.cluper.course_registration.ResponseMessage parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.cluper.course_registration.StudetRequest parseFrom(
+  public static com.cluper.course_registration.ResponseMessage parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.cluper.course_registration.StudetRequest parseFrom(
+  public static com.cluper.course_registration.ResponseMessage parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -261,7 +289,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.cluper.course_registration.StudetRequest prototype) {
+  public static Builder newBuilder(com.cluper.course_registration.ResponseMessage prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -277,26 +305,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code university.StudetRequest}
+   * Protobuf type {@code university.ResponseMessage}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:university.StudetRequest)
-      com.cluper.course_registration.StudetRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:university.ResponseMessage)
+      com.cluper.course_registration.ResponseMessageOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.cluper.course_registration.University.internal_static_university_StudetRequest_descriptor;
+      return com.cluper.course_registration.University.internal_static_university_ResponseMessage_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.cluper.course_registration.University.internal_static_university_StudetRequest_fieldAccessorTable
+      return com.cluper.course_registration.University.internal_static_university_ResponseMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.cluper.course_registration.StudetRequest.class, com.cluper.course_registration.StudetRequest.Builder.class);
+              com.cluper.course_registration.ResponseMessage.class, com.cluper.course_registration.ResponseMessage.Builder.class);
     }
 
-    // Construct using com.cluper.course_registration.StudetRequest.newBuilder()
+    // Construct using com.cluper.course_registration.ResponseMessage.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -314,29 +342,27 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (studentBuilder_ == null) {
-        student_ = null;
-      } else {
-        student_ = null;
-        studentBuilder_ = null;
-      }
+      success_ = false;
+
+      message_ = "";
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.cluper.course_registration.University.internal_static_university_StudetRequest_descriptor;
+      return com.cluper.course_registration.University.internal_static_university_ResponseMessage_descriptor;
     }
 
     @java.lang.Override
-    public com.cluper.course_registration.StudetRequest getDefaultInstanceForType() {
-      return com.cluper.course_registration.StudetRequest.getDefaultInstance();
+    public com.cluper.course_registration.ResponseMessage getDefaultInstanceForType() {
+      return com.cluper.course_registration.ResponseMessage.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.cluper.course_registration.StudetRequest build() {
-      com.cluper.course_registration.StudetRequest result = buildPartial();
+    public com.cluper.course_registration.ResponseMessage build() {
+      com.cluper.course_registration.ResponseMessage result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -344,13 +370,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.cluper.course_registration.StudetRequest buildPartial() {
-      com.cluper.course_registration.StudetRequest result = new com.cluper.course_registration.StudetRequest(this);
-      if (studentBuilder_ == null) {
-        result.student_ = student_;
-      } else {
-        result.student_ = studentBuilder_.build();
-      }
+    public com.cluper.course_registration.ResponseMessage buildPartial() {
+      com.cluper.course_registration.ResponseMessage result = new com.cluper.course_registration.ResponseMessage(this);
+      result.success_ = success_;
+      result.message_ = message_;
       onBuilt();
       return result;
     }
@@ -389,18 +412,22 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.cluper.course_registration.StudetRequest) {
-        return mergeFrom((com.cluper.course_registration.StudetRequest)other);
+      if (other instanceof com.cluper.course_registration.ResponseMessage) {
+        return mergeFrom((com.cluper.course_registration.ResponseMessage)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.cluper.course_registration.StudetRequest other) {
-      if (other == com.cluper.course_registration.StudetRequest.getDefaultInstance()) return this;
-      if (other.hasStudent()) {
-        mergeStudent(other.getStudent());
+    public Builder mergeFrom(com.cluper.course_registration.ResponseMessage other) {
+      if (other == com.cluper.course_registration.ResponseMessage.getDefaultInstance()) return this;
+      if (other.getSuccess() != false) {
+        setSuccess(other.getSuccess());
+      }
+      if (!other.getMessage().isEmpty()) {
+        message_ = other.message_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -417,11 +444,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.cluper.course_registration.StudetRequest parsedMessage = null;
+      com.cluper.course_registration.ResponseMessage parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.cluper.course_registration.StudetRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.cluper.course_registration.ResponseMessage) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -431,123 +458,110 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.cluper.course_registration.Student student_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.cluper.course_registration.Student, com.cluper.course_registration.Student.Builder, com.cluper.course_registration.StudentOrBuilder> studentBuilder_;
+    private boolean success_ ;
     /**
-     * <code>.university.Student student = 1;</code>
-     * @return Whether the student field is set.
+     * <code>bool success = 1;</code>
+     * @return The success.
      */
-    public boolean hasStudent() {
-      return studentBuilder_ != null || student_ != null;
+    public boolean getSuccess() {
+      return success_;
     }
     /**
-     * <code>.university.Student student = 1;</code>
-     * @return The student.
+     * <code>bool success = 1;</code>
+     * @param value The success to set.
+     * @return This builder for chaining.
      */
-    public com.cluper.course_registration.Student getStudent() {
-      if (studentBuilder_ == null) {
-        return student_ == null ? com.cluper.course_registration.Student.getDefaultInstance() : student_;
-      } else {
-        return studentBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.university.Student student = 1;</code>
-     */
-    public Builder setStudent(com.cluper.course_registration.Student value) {
-      if (studentBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        student_ = value;
-        onChanged();
-      } else {
-        studentBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.university.Student student = 1;</code>
-     */
-    public Builder setStudent(
-        com.cluper.course_registration.Student.Builder builderForValue) {
-      if (studentBuilder_ == null) {
-        student_ = builderForValue.build();
-        onChanged();
-      } else {
-        studentBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.university.Student student = 1;</code>
-     */
-    public Builder mergeStudent(com.cluper.course_registration.Student value) {
-      if (studentBuilder_ == null) {
-        if (student_ != null) {
-          student_ =
-            com.cluper.course_registration.Student.newBuilder(student_).mergeFrom(value).buildPartial();
-        } else {
-          student_ = value;
-        }
-        onChanged();
-      } else {
-        studentBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.university.Student student = 1;</code>
-     */
-    public Builder clearStudent() {
-      if (studentBuilder_ == null) {
-        student_ = null;
-        onChanged();
-      } else {
-        student_ = null;
-        studentBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.university.Student student = 1;</code>
-     */
-    public com.cluper.course_registration.Student.Builder getStudentBuilder() {
+    public Builder setSuccess(boolean value) {
       
+      success_ = value;
       onChanged();
-      return getStudentFieldBuilder().getBuilder();
+      return this;
     }
     /**
-     * <code>.university.Student student = 1;</code>
+     * <code>bool success = 1;</code>
+     * @return This builder for chaining.
      */
-    public com.cluper.course_registration.StudentOrBuilder getStudentOrBuilder() {
-      if (studentBuilder_ != null) {
-        return studentBuilder_.getMessageOrBuilder();
+    public Builder clearSuccess() {
+      
+      success_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object message_ = "";
+    /**
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
       } else {
-        return student_ == null ?
-            com.cluper.course_registration.Student.getDefaultInstance() : student_;
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.university.Student student = 1;</code>
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.cluper.course_registration.Student, com.cluper.course_registration.Student.Builder, com.cluper.course_registration.StudentOrBuilder> 
-        getStudentFieldBuilder() {
-      if (studentBuilder_ == null) {
-        studentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.cluper.course_registration.Student, com.cluper.course_registration.Student.Builder, com.cluper.course_registration.StudentOrBuilder>(
-                getStudent(),
-                getParentForChildren(),
-                isClean());
-        student_ = null;
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
-      return studentBuilder_;
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @param value The message to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMessage(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      message_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMessage() {
+      
+      message_ = getDefaultInstance().getMessage();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string message = 2;</code>
+     * @param value The bytes for message to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMessageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      message_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -562,41 +576,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:university.StudetRequest)
+    // @@protoc_insertion_point(builder_scope:university.ResponseMessage)
   }
 
-  // @@protoc_insertion_point(class_scope:university.StudetRequest)
-  private static final com.cluper.course_registration.StudetRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:university.ResponseMessage)
+  private static final com.cluper.course_registration.ResponseMessage DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.cluper.course_registration.StudetRequest();
+    DEFAULT_INSTANCE = new com.cluper.course_registration.ResponseMessage();
   }
 
-  public static com.cluper.course_registration.StudetRequest getDefaultInstance() {
+  public static com.cluper.course_registration.ResponseMessage getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<StudetRequest>
-      PARSER = new com.google.protobuf.AbstractParser<StudetRequest>() {
+  private static final com.google.protobuf.Parser<ResponseMessage>
+      PARSER = new com.google.protobuf.AbstractParser<ResponseMessage>() {
     @java.lang.Override
-    public StudetRequest parsePartialFrom(
+    public ResponseMessage parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new StudetRequest(input, extensionRegistry);
+      return new ResponseMessage(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<StudetRequest> parser() {
+  public static com.google.protobuf.Parser<ResponseMessage> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<StudetRequest> getParserForType() {
+  public com.google.protobuf.Parser<ResponseMessage> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.cluper.course_registration.StudetRequest getDefaultInstanceForType() {
+  public com.cluper.course_registration.ResponseMessage getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

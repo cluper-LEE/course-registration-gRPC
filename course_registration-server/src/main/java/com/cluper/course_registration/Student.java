@@ -19,7 +19,8 @@ private static final long serialVersionUID = 0L;
     studentId_ = "";
     lastName_ = "";
     firstName_ = "";
-    courses_ = java.util.Collections.emptyList();
+    department_ = "";
+    courseId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -72,12 +73,18 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            department_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              courses_ = new java.util.ArrayList<com.cluper.course_registration.Course>();
+              courseId_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
             }
-            courses_.add(
-                input.readMessage(com.cluper.course_registration.Course.parser(), extensionRegistry));
+            courseId_.add(s);
             break;
           }
           default: {
@@ -96,7 +103,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        courses_ = java.util.Collections.unmodifiableList(courses_);
+        courseId_ = courseId_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -223,39 +230,75 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COURSES_FIELD_NUMBER = 4;
-  private java.util.List<com.cluper.course_registration.Course> courses_;
+  public static final int DEPARTMENT_FIELD_NUMBER = 4;
+  private volatile java.lang.Object department_;
   /**
-   * <code>repeated .university.Course courses = 4;</code>
+   * <code>string department = 4;</code>
+   * @return The department.
    */
-  public java.util.List<com.cluper.course_registration.Course> getCoursesList() {
-    return courses_;
+  public java.lang.String getDepartment() {
+    java.lang.Object ref = department_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      department_ = s;
+      return s;
+    }
   }
   /**
-   * <code>repeated .university.Course courses = 4;</code>
+   * <code>string department = 4;</code>
+   * @return The bytes for department.
    */
-  public java.util.List<? extends com.cluper.course_registration.CourseOrBuilder> 
-      getCoursesOrBuilderList() {
-    return courses_;
+  public com.google.protobuf.ByteString
+      getDepartmentBytes() {
+    java.lang.Object ref = department_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      department_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int COURSE_ID_FIELD_NUMBER = 5;
+  private com.google.protobuf.LazyStringList courseId_;
+  /**
+   * <code>repeated string course_id = 5;</code>
+   * @return A list containing the courseId.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getCourseIdList() {
+    return courseId_;
   }
   /**
-   * <code>repeated .university.Course courses = 4;</code>
+   * <code>repeated string course_id = 5;</code>
+   * @return The count of courseId.
    */
-  public int getCoursesCount() {
-    return courses_.size();
+  public int getCourseIdCount() {
+    return courseId_.size();
   }
   /**
-   * <code>repeated .university.Course courses = 4;</code>
+   * <code>repeated string course_id = 5;</code>
+   * @param index The index of the element to return.
+   * @return The courseId at the given index.
    */
-  public com.cluper.course_registration.Course getCourses(int index) {
-    return courses_.get(index);
+  public java.lang.String getCourseId(int index) {
+    return courseId_.get(index);
   }
   /**
-   * <code>repeated .university.Course courses = 4;</code>
+   * <code>repeated string course_id = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the courseId at the given index.
    */
-  public com.cluper.course_registration.CourseOrBuilder getCoursesOrBuilder(
-      int index) {
-    return courses_.get(index);
+  public com.google.protobuf.ByteString
+      getCourseIdBytes(int index) {
+    return courseId_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -281,8 +324,11 @@ private static final long serialVersionUID = 0L;
     if (!getFirstNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, firstName_);
     }
-    for (int i = 0; i < courses_.size(); i++) {
-      output.writeMessage(4, courses_.get(i));
+    if (!getDepartmentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, department_);
+    }
+    for (int i = 0; i < courseId_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, courseId_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -302,9 +348,16 @@ private static final long serialVersionUID = 0L;
     if (!getFirstNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, firstName_);
     }
-    for (int i = 0; i < courses_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, courses_.get(i));
+    if (!getDepartmentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, department_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < courseId_.size(); i++) {
+        dataSize += computeStringSizeNoTag(courseId_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getCourseIdList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -327,8 +380,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLastName())) return false;
     if (!getFirstName()
         .equals(other.getFirstName())) return false;
-    if (!getCoursesList()
-        .equals(other.getCoursesList())) return false;
+    if (!getDepartment()
+        .equals(other.getDepartment())) return false;
+    if (!getCourseIdList()
+        .equals(other.getCourseIdList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -346,9 +401,11 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getLastName().hashCode();
     hash = (37 * hash) + FIRST_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getFirstName().hashCode();
-    if (getCoursesCount() > 0) {
-      hash = (37 * hash) + COURSES_FIELD_NUMBER;
-      hash = (53 * hash) + getCoursesList().hashCode();
+    hash = (37 * hash) + DEPARTMENT_FIELD_NUMBER;
+    hash = (53 * hash) + getDepartment().hashCode();
+    if (getCourseIdCount() > 0) {
+      hash = (37 * hash) + COURSE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCourseIdList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -478,7 +535,6 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getCoursesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -490,12 +546,10 @@ private static final long serialVersionUID = 0L;
 
       firstName_ = "";
 
-      if (coursesBuilder_ == null) {
-        courses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      } else {
-        coursesBuilder_.clear();
-      }
+      department_ = "";
+
+      courseId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -526,15 +580,12 @@ private static final long serialVersionUID = 0L;
       result.studentId_ = studentId_;
       result.lastName_ = lastName_;
       result.firstName_ = firstName_;
-      if (coursesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          courses_ = java.util.Collections.unmodifiableList(courses_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.courses_ = courses_;
-      } else {
-        result.courses_ = coursesBuilder_.build();
+      result.department_ = department_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        courseId_ = courseId_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
+      result.courseId_ = courseId_;
       onBuilt();
       return result;
     }
@@ -595,31 +646,19 @@ private static final long serialVersionUID = 0L;
         firstName_ = other.firstName_;
         onChanged();
       }
-      if (coursesBuilder_ == null) {
-        if (!other.courses_.isEmpty()) {
-          if (courses_.isEmpty()) {
-            courses_ = other.courses_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureCoursesIsMutable();
-            courses_.addAll(other.courses_);
-          }
-          onChanged();
+      if (!other.getDepartment().isEmpty()) {
+        department_ = other.department_;
+        onChanged();
+      }
+      if (!other.courseId_.isEmpty()) {
+        if (courseId_.isEmpty()) {
+          courseId_ = other.courseId_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureCourseIdIsMutable();
+          courseId_.addAll(other.courseId_);
         }
-      } else {
-        if (!other.courses_.isEmpty()) {
-          if (coursesBuilder_.isEmpty()) {
-            coursesBuilder_.dispose();
-            coursesBuilder_ = null;
-            courses_ = other.courses_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            coursesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getCoursesFieldBuilder() : null;
-          } else {
-            coursesBuilder_.addAllMessages(other.courses_);
-          }
-        }
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -879,244 +918,190 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<com.cluper.course_registration.Course> courses_ =
-      java.util.Collections.emptyList();
-    private void ensureCoursesIsMutable() {
+    private java.lang.Object department_ = "";
+    /**
+     * <code>string department = 4;</code>
+     * @return The department.
+     */
+    public java.lang.String getDepartment() {
+      java.lang.Object ref = department_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        department_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string department = 4;</code>
+     * @return The bytes for department.
+     */
+    public com.google.protobuf.ByteString
+        getDepartmentBytes() {
+      java.lang.Object ref = department_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        department_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string department = 4;</code>
+     * @param value The department to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDepartment(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      department_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string department = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDepartment() {
+      
+      department_ = getDefaultInstance().getDepartment();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string department = 4;</code>
+     * @param value The bytes for department to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDepartmentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      department_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList courseId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureCourseIdIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        courses_ = new java.util.ArrayList<com.cluper.course_registration.Course>(courses_);
+        courseId_ = new com.google.protobuf.LazyStringArrayList(courseId_);
         bitField0_ |= 0x00000001;
        }
     }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.cluper.course_registration.Course, com.cluper.course_registration.Course.Builder, com.cluper.course_registration.CourseOrBuilder> coursesBuilder_;
-
     /**
-     * <code>repeated .university.Course courses = 4;</code>
+     * <code>repeated string course_id = 5;</code>
+     * @return A list containing the courseId.
      */
-    public java.util.List<com.cluper.course_registration.Course> getCoursesList() {
-      if (coursesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(courses_);
-      } else {
-        return coursesBuilder_.getMessageList();
-      }
+    public com.google.protobuf.ProtocolStringList
+        getCourseIdList() {
+      return courseId_.getUnmodifiableView();
     }
     /**
-     * <code>repeated .university.Course courses = 4;</code>
+     * <code>repeated string course_id = 5;</code>
+     * @return The count of courseId.
      */
-    public int getCoursesCount() {
-      if (coursesBuilder_ == null) {
-        return courses_.size();
-      } else {
-        return coursesBuilder_.getCount();
-      }
+    public int getCourseIdCount() {
+      return courseId_.size();
     }
     /**
-     * <code>repeated .university.Course courses = 4;</code>
+     * <code>repeated string course_id = 5;</code>
+     * @param index The index of the element to return.
+     * @return The courseId at the given index.
      */
-    public com.cluper.course_registration.Course getCourses(int index) {
-      if (coursesBuilder_ == null) {
-        return courses_.get(index);
-      } else {
-        return coursesBuilder_.getMessage(index);
-      }
+    public java.lang.String getCourseId(int index) {
+      return courseId_.get(index);
     }
     /**
-     * <code>repeated .university.Course courses = 4;</code>
+     * <code>repeated string course_id = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the courseId at the given index.
      */
-    public Builder setCourses(
-        int index, com.cluper.course_registration.Course value) {
-      if (coursesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCoursesIsMutable();
-        courses_.set(index, value);
-        onChanged();
-      } else {
-        coursesBuilder_.setMessage(index, value);
-      }
+    public com.google.protobuf.ByteString
+        getCourseIdBytes(int index) {
+      return courseId_.getByteString(index);
+    }
+    /**
+     * <code>repeated string course_id = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The courseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseId(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCourseIdIsMutable();
+      courseId_.set(index, value);
+      onChanged();
       return this;
     }
     /**
-     * <code>repeated .university.Course courses = 4;</code>
+     * <code>repeated string course_id = 5;</code>
+     * @param value The courseId to add.
+     * @return This builder for chaining.
      */
-    public Builder setCourses(
-        int index, com.cluper.course_registration.Course.Builder builderForValue) {
-      if (coursesBuilder_ == null) {
-        ensureCoursesIsMutable();
-        courses_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        coursesBuilder_.setMessage(index, builderForValue.build());
-      }
+    public Builder addCourseId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCourseIdIsMutable();
+      courseId_.add(value);
+      onChanged();
       return this;
     }
     /**
-     * <code>repeated .university.Course courses = 4;</code>
+     * <code>repeated string course_id = 5;</code>
+     * @param values The courseId to add.
+     * @return This builder for chaining.
      */
-    public Builder addCourses(com.cluper.course_registration.Course value) {
-      if (coursesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCoursesIsMutable();
-        courses_.add(value);
-        onChanged();
-      } else {
-        coursesBuilder_.addMessage(value);
-      }
+    public Builder addAllCourseId(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureCourseIdIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, courseId_);
+      onChanged();
       return this;
     }
     /**
-     * <code>repeated .university.Course courses = 4;</code>
+     * <code>repeated string course_id = 5;</code>
+     * @return This builder for chaining.
      */
-    public Builder addCourses(
-        int index, com.cluper.course_registration.Course value) {
-      if (coursesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCoursesIsMutable();
-        courses_.add(index, value);
-        onChanged();
-      } else {
-        coursesBuilder_.addMessage(index, value);
-      }
+    public Builder clearCourseId() {
+      courseId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
       return this;
     }
     /**
-     * <code>repeated .university.Course courses = 4;</code>
+     * <code>repeated string course_id = 5;</code>
+     * @param value The bytes of the courseId to add.
+     * @return This builder for chaining.
      */
-    public Builder addCourses(
-        com.cluper.course_registration.Course.Builder builderForValue) {
-      if (coursesBuilder_ == null) {
-        ensureCoursesIsMutable();
-        courses_.add(builderForValue.build());
-        onChanged();
-      } else {
-        coursesBuilder_.addMessage(builderForValue.build());
-      }
+    public Builder addCourseIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureCourseIdIsMutable();
+      courseId_.add(value);
+      onChanged();
       return this;
-    }
-    /**
-     * <code>repeated .university.Course courses = 4;</code>
-     */
-    public Builder addCourses(
-        int index, com.cluper.course_registration.Course.Builder builderForValue) {
-      if (coursesBuilder_ == null) {
-        ensureCoursesIsMutable();
-        courses_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        coursesBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .university.Course courses = 4;</code>
-     */
-    public Builder addAllCourses(
-        java.lang.Iterable<? extends com.cluper.course_registration.Course> values) {
-      if (coursesBuilder_ == null) {
-        ensureCoursesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, courses_);
-        onChanged();
-      } else {
-        coursesBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .university.Course courses = 4;</code>
-     */
-    public Builder clearCourses() {
-      if (coursesBuilder_ == null) {
-        courses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-      } else {
-        coursesBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .university.Course courses = 4;</code>
-     */
-    public Builder removeCourses(int index) {
-      if (coursesBuilder_ == null) {
-        ensureCoursesIsMutable();
-        courses_.remove(index);
-        onChanged();
-      } else {
-        coursesBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .university.Course courses = 4;</code>
-     */
-    public com.cluper.course_registration.Course.Builder getCoursesBuilder(
-        int index) {
-      return getCoursesFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <code>repeated .university.Course courses = 4;</code>
-     */
-    public com.cluper.course_registration.CourseOrBuilder getCoursesOrBuilder(
-        int index) {
-      if (coursesBuilder_ == null) {
-        return courses_.get(index);  } else {
-        return coursesBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <code>repeated .university.Course courses = 4;</code>
-     */
-    public java.util.List<? extends com.cluper.course_registration.CourseOrBuilder> 
-         getCoursesOrBuilderList() {
-      if (coursesBuilder_ != null) {
-        return coursesBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(courses_);
-      }
-    }
-    /**
-     * <code>repeated .university.Course courses = 4;</code>
-     */
-    public com.cluper.course_registration.Course.Builder addCoursesBuilder() {
-      return getCoursesFieldBuilder().addBuilder(
-          com.cluper.course_registration.Course.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .university.Course courses = 4;</code>
-     */
-    public com.cluper.course_registration.Course.Builder addCoursesBuilder(
-        int index) {
-      return getCoursesFieldBuilder().addBuilder(
-          index, com.cluper.course_registration.Course.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .university.Course courses = 4;</code>
-     */
-    public java.util.List<com.cluper.course_registration.Course.Builder> 
-         getCoursesBuilderList() {
-      return getCoursesFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.cluper.course_registration.Course, com.cluper.course_registration.Course.Builder, com.cluper.course_registration.CourseOrBuilder> 
-        getCoursesFieldBuilder() {
-      if (coursesBuilder_ == null) {
-        coursesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.cluper.course_registration.Course, com.cluper.course_registration.Course.Builder, com.cluper.course_registration.CourseOrBuilder>(
-                courses_,
-                ((bitField0_ & 0x00000001) != 0),
-                getParentForChildren(),
-                isClean());
-        courses_ = null;
-      }
-      return coursesBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

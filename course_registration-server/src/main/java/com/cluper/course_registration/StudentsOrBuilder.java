@@ -3,8 +3,8 @@
 
 package com.cluper.course_registration;
 
-public interface StudentResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:university.StudentResponse)
+public interface StudentsOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:university.Students)
     com.google.protobuf.MessageOrBuilder {
 
   /**

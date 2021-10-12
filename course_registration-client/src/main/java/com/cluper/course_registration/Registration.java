@@ -4,22 +4,19 @@
 package com.cluper.course_registration;
 
 /**
- * Protobuf type {@code university.Student}
+ * Protobuf type {@code university.Registration}
  */
-public  final class Student extends
+public  final class Registration extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:university.Student)
-    StudentOrBuilder {
+    // @@protoc_insertion_point(message_implements:university.Registration)
+    RegistrationOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use Student.newBuilder() to construct.
-  private Student(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Registration.newBuilder() to construct.
+  private Registration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private Student() {
+  private Registration() {
     studentId_ = "";
-    lastName_ = "";
-    firstName_ = "";
-    department_ = "";
     courseId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -27,7 +24,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new Student();
+    return new Registration();
   }
 
   @java.lang.Override
@@ -35,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private Student(
+  private Registration(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -61,24 +58,6 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            lastName_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            firstName_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            department_ = s;
-            break;
-          }
-          case 42: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               courseId_ = new com.google.protobuf.LazyStringArrayList();
@@ -111,15 +90,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.cluper.course_registration.University.internal_static_university_Student_descriptor;
+    return com.cluper.course_registration.University.internal_static_university_Registration_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.cluper.course_registration.University.internal_static_university_Student_fieldAccessorTable
+    return com.cluper.course_registration.University.internal_static_university_Registration_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.cluper.course_registration.Student.class, com.cluper.course_registration.Student.Builder.class);
+            com.cluper.course_registration.Registration.class, com.cluper.course_registration.Registration.Builder.class);
   }
 
   public static final int STUDENT_ID_FIELD_NUMBER = 1;
@@ -158,118 +137,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int LAST_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object lastName_;
-  /**
-   * <code>string last_name = 2;</code>
-   * @return The lastName.
-   */
-  public java.lang.String getLastName() {
-    java.lang.Object ref = lastName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      lastName_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string last_name = 2;</code>
-   * @return The bytes for lastName.
-   */
-  public com.google.protobuf.ByteString
-      getLastNameBytes() {
-    java.lang.Object ref = lastName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      lastName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int FIRST_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object firstName_;
-  /**
-   * <code>string first_name = 3;</code>
-   * @return The firstName.
-   */
-  public java.lang.String getFirstName() {
-    java.lang.Object ref = firstName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      firstName_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string first_name = 3;</code>
-   * @return The bytes for firstName.
-   */
-  public com.google.protobuf.ByteString
-      getFirstNameBytes() {
-    java.lang.Object ref = firstName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      firstName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DEPARTMENT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object department_;
-  /**
-   * <code>string department = 4;</code>
-   * @return The department.
-   */
-  public java.lang.String getDepartment() {
-    java.lang.Object ref = department_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      department_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string department = 4;</code>
-   * @return The bytes for department.
-   */
-  public com.google.protobuf.ByteString
-      getDepartmentBytes() {
-    java.lang.Object ref = department_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      department_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int COURSE_ID_FIELD_NUMBER = 5;
+  public static final int COURSE_ID_FIELD_NUMBER = 2;
   private com.google.protobuf.LazyStringList courseId_;
   /**
-   * <code>repeated string course_id = 5;</code>
+   * <code>repeated string course_id = 2;</code>
    * @return A list containing the courseId.
    */
   public com.google.protobuf.ProtocolStringList
@@ -277,14 +148,14 @@ private static final long serialVersionUID = 0L;
     return courseId_;
   }
   /**
-   * <code>repeated string course_id = 5;</code>
+   * <code>repeated string course_id = 2;</code>
    * @return The count of courseId.
    */
   public int getCourseIdCount() {
     return courseId_.size();
   }
   /**
-   * <code>repeated string course_id = 5;</code>
+   * <code>repeated string course_id = 2;</code>
    * @param index The index of the element to return.
    * @return The courseId at the given index.
    */
@@ -292,7 +163,7 @@ private static final long serialVersionUID = 0L;
     return courseId_.get(index);
   }
   /**
-   * <code>repeated string course_id = 5;</code>
+   * <code>repeated string course_id = 2;</code>
    * @param index The index of the value to return.
    * @return The bytes of the courseId at the given index.
    */
@@ -318,17 +189,8 @@ private static final long serialVersionUID = 0L;
     if (!getStudentIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, studentId_);
     }
-    if (!getLastNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, lastName_);
-    }
-    if (!getFirstNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, firstName_);
-    }
-    if (!getDepartmentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, department_);
-    }
     for (int i = 0; i < courseId_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, courseId_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, courseId_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -341,15 +203,6 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getStudentIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, studentId_);
-    }
-    if (!getLastNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, lastName_);
-    }
-    if (!getFirstNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, firstName_);
-    }
-    if (!getDepartmentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, department_);
     }
     {
       int dataSize = 0;
@@ -369,19 +222,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.cluper.course_registration.Student)) {
+    if (!(obj instanceof com.cluper.course_registration.Registration)) {
       return super.equals(obj);
     }
-    com.cluper.course_registration.Student other = (com.cluper.course_registration.Student) obj;
+    com.cluper.course_registration.Registration other = (com.cluper.course_registration.Registration) obj;
 
     if (!getStudentId()
         .equals(other.getStudentId())) return false;
-    if (!getLastName()
-        .equals(other.getLastName())) return false;
-    if (!getFirstName()
-        .equals(other.getFirstName())) return false;
-    if (!getDepartment()
-        .equals(other.getDepartment())) return false;
     if (!getCourseIdList()
         .equals(other.getCourseIdList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -397,12 +244,6 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + STUDENT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getStudentId().hashCode();
-    hash = (37 * hash) + LAST_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getLastName().hashCode();
-    hash = (37 * hash) + FIRST_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getFirstName().hashCode();
-    hash = (37 * hash) + DEPARTMENT_FIELD_NUMBER;
-    hash = (53 * hash) + getDepartment().hashCode();
     if (getCourseIdCount() > 0) {
       hash = (37 * hash) + COURSE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCourseIdList().hashCode();
@@ -412,69 +253,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.cluper.course_registration.Student parseFrom(
+  public static com.cluper.course_registration.Registration parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.cluper.course_registration.Student parseFrom(
+  public static com.cluper.course_registration.Registration parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.cluper.course_registration.Student parseFrom(
+  public static com.cluper.course_registration.Registration parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.cluper.course_registration.Student parseFrom(
+  public static com.cluper.course_registration.Registration parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.cluper.course_registration.Student parseFrom(byte[] data)
+  public static com.cluper.course_registration.Registration parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.cluper.course_registration.Student parseFrom(
+  public static com.cluper.course_registration.Registration parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.cluper.course_registration.Student parseFrom(java.io.InputStream input)
+  public static com.cluper.course_registration.Registration parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.cluper.course_registration.Student parseFrom(
+  public static com.cluper.course_registration.Registration parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.cluper.course_registration.Student parseDelimitedFrom(java.io.InputStream input)
+  public static com.cluper.course_registration.Registration parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.cluper.course_registration.Student parseDelimitedFrom(
+  public static com.cluper.course_registration.Registration parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.cluper.course_registration.Student parseFrom(
+  public static com.cluper.course_registration.Registration parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.cluper.course_registration.Student parseFrom(
+  public static com.cluper.course_registration.Registration parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -487,7 +328,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.cluper.course_registration.Student prototype) {
+  public static Builder newBuilder(com.cluper.course_registration.Registration prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -503,26 +344,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code university.Student}
+   * Protobuf type {@code university.Registration}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:university.Student)
-      com.cluper.course_registration.StudentOrBuilder {
+      // @@protoc_insertion_point(builder_implements:university.Registration)
+      com.cluper.course_registration.RegistrationOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.cluper.course_registration.University.internal_static_university_Student_descriptor;
+      return com.cluper.course_registration.University.internal_static_university_Registration_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.cluper.course_registration.University.internal_static_university_Student_fieldAccessorTable
+      return com.cluper.course_registration.University.internal_static_university_Registration_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.cluper.course_registration.Student.class, com.cluper.course_registration.Student.Builder.class);
+              com.cluper.course_registration.Registration.class, com.cluper.course_registration.Registration.Builder.class);
     }
 
-    // Construct using com.cluper.course_registration.Student.newBuilder()
+    // Construct using com.cluper.course_registration.Registration.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -542,12 +383,6 @@ private static final long serialVersionUID = 0L;
       super.clear();
       studentId_ = "";
 
-      lastName_ = "";
-
-      firstName_ = "";
-
-      department_ = "";
-
       courseId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -556,17 +391,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.cluper.course_registration.University.internal_static_university_Student_descriptor;
+      return com.cluper.course_registration.University.internal_static_university_Registration_descriptor;
     }
 
     @java.lang.Override
-    public com.cluper.course_registration.Student getDefaultInstanceForType() {
-      return com.cluper.course_registration.Student.getDefaultInstance();
+    public com.cluper.course_registration.Registration getDefaultInstanceForType() {
+      return com.cluper.course_registration.Registration.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.cluper.course_registration.Student build() {
-      com.cluper.course_registration.Student result = buildPartial();
+    public com.cluper.course_registration.Registration build() {
+      com.cluper.course_registration.Registration result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -574,13 +409,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.cluper.course_registration.Student buildPartial() {
-      com.cluper.course_registration.Student result = new com.cluper.course_registration.Student(this);
+    public com.cluper.course_registration.Registration buildPartial() {
+      com.cluper.course_registration.Registration result = new com.cluper.course_registration.Registration(this);
       int from_bitField0_ = bitField0_;
       result.studentId_ = studentId_;
-      result.lastName_ = lastName_;
-      result.firstName_ = firstName_;
-      result.department_ = department_;
       if (((bitField0_ & 0x00000001) != 0)) {
         courseId_ = courseId_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -624,30 +456,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.cluper.course_registration.Student) {
-        return mergeFrom((com.cluper.course_registration.Student)other);
+      if (other instanceof com.cluper.course_registration.Registration) {
+        return mergeFrom((com.cluper.course_registration.Registration)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.cluper.course_registration.Student other) {
-      if (other == com.cluper.course_registration.Student.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.cluper.course_registration.Registration other) {
+      if (other == com.cluper.course_registration.Registration.getDefaultInstance()) return this;
       if (!other.getStudentId().isEmpty()) {
         studentId_ = other.studentId_;
-        onChanged();
-      }
-      if (!other.getLastName().isEmpty()) {
-        lastName_ = other.lastName_;
-        onChanged();
-      }
-      if (!other.getFirstName().isEmpty()) {
-        firstName_ = other.firstName_;
-        onChanged();
-      }
-      if (!other.getDepartment().isEmpty()) {
-        department_ = other.department_;
         onChanged();
       }
       if (!other.courseId_.isEmpty()) {
@@ -675,11 +495,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.cluper.course_registration.Student parsedMessage = null;
+      com.cluper.course_registration.Registration parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.cluper.course_registration.Student) e.getUnfinishedMessage();
+        parsedMessage = (com.cluper.course_registration.Registration) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -766,234 +586,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object lastName_ = "";
-    /**
-     * <code>string last_name = 2;</code>
-     * @return The lastName.
-     */
-    public java.lang.String getLastName() {
-      java.lang.Object ref = lastName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        lastName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string last_name = 2;</code>
-     * @return The bytes for lastName.
-     */
-    public com.google.protobuf.ByteString
-        getLastNameBytes() {
-      java.lang.Object ref = lastName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        lastName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string last_name = 2;</code>
-     * @param value The lastName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLastName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      lastName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string last_name = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLastName() {
-      
-      lastName_ = getDefaultInstance().getLastName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string last_name = 2;</code>
-     * @param value The bytes for lastName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLastNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      lastName_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object firstName_ = "";
-    /**
-     * <code>string first_name = 3;</code>
-     * @return The firstName.
-     */
-    public java.lang.String getFirstName() {
-      java.lang.Object ref = firstName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        firstName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string first_name = 3;</code>
-     * @return The bytes for firstName.
-     */
-    public com.google.protobuf.ByteString
-        getFirstNameBytes() {
-      java.lang.Object ref = firstName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        firstName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string first_name = 3;</code>
-     * @param value The firstName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFirstName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      firstName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string first_name = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearFirstName() {
-      
-      firstName_ = getDefaultInstance().getFirstName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string first_name = 3;</code>
-     * @param value The bytes for firstName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFirstNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      firstName_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object department_ = "";
-    /**
-     * <code>string department = 4;</code>
-     * @return The department.
-     */
-    public java.lang.String getDepartment() {
-      java.lang.Object ref = department_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        department_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string department = 4;</code>
-     * @return The bytes for department.
-     */
-    public com.google.protobuf.ByteString
-        getDepartmentBytes() {
-      java.lang.Object ref = department_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        department_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string department = 4;</code>
-     * @param value The department to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDepartment(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      department_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string department = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDepartment() {
-      
-      department_ = getDefaultInstance().getDepartment();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string department = 4;</code>
-     * @param value The bytes for department to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDepartmentBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      department_ = value;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.LazyStringList courseId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureCourseIdIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
@@ -1002,7 +594,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated string course_id = 5;</code>
+     * <code>repeated string course_id = 2;</code>
      * @return A list containing the courseId.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1010,14 +602,14 @@ private static final long serialVersionUID = 0L;
       return courseId_.getUnmodifiableView();
     }
     /**
-     * <code>repeated string course_id = 5;</code>
+     * <code>repeated string course_id = 2;</code>
      * @return The count of courseId.
      */
     public int getCourseIdCount() {
       return courseId_.size();
     }
     /**
-     * <code>repeated string course_id = 5;</code>
+     * <code>repeated string course_id = 2;</code>
      * @param index The index of the element to return.
      * @return The courseId at the given index.
      */
@@ -1025,7 +617,7 @@ private static final long serialVersionUID = 0L;
       return courseId_.get(index);
     }
     /**
-     * <code>repeated string course_id = 5;</code>
+     * <code>repeated string course_id = 2;</code>
      * @param index The index of the value to return.
      * @return The bytes of the courseId at the given index.
      */
@@ -1034,7 +626,7 @@ private static final long serialVersionUID = 0L;
       return courseId_.getByteString(index);
     }
     /**
-     * <code>repeated string course_id = 5;</code>
+     * <code>repeated string course_id = 2;</code>
      * @param index The index to set the value at.
      * @param value The courseId to set.
      * @return This builder for chaining.
@@ -1050,7 +642,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string course_id = 5;</code>
+     * <code>repeated string course_id = 2;</code>
      * @param value The courseId to add.
      * @return This builder for chaining.
      */
@@ -1065,7 +657,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string course_id = 5;</code>
+     * <code>repeated string course_id = 2;</code>
      * @param values The courseId to add.
      * @return This builder for chaining.
      */
@@ -1078,7 +670,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string course_id = 5;</code>
+     * <code>repeated string course_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearCourseId() {
@@ -1088,7 +680,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string course_id = 5;</code>
+     * <code>repeated string course_id = 2;</code>
      * @param value The bytes of the courseId to add.
      * @return This builder for chaining.
      */
@@ -1116,41 +708,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:university.Student)
+    // @@protoc_insertion_point(builder_scope:university.Registration)
   }
 
-  // @@protoc_insertion_point(class_scope:university.Student)
-  private static final com.cluper.course_registration.Student DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:university.Registration)
+  private static final com.cluper.course_registration.Registration DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.cluper.course_registration.Student();
+    DEFAULT_INSTANCE = new com.cluper.course_registration.Registration();
   }
 
-  public static com.cluper.course_registration.Student getDefaultInstance() {
+  public static com.cluper.course_registration.Registration getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Student>
-      PARSER = new com.google.protobuf.AbstractParser<Student>() {
+  private static final com.google.protobuf.Parser<Registration>
+      PARSER = new com.google.protobuf.AbstractParser<Registration>() {
     @java.lang.Override
-    public Student parsePartialFrom(
+    public Registration parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Student(input, extensionRegistry);
+      return new Registration(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<Student> parser() {
+  public static com.google.protobuf.Parser<Registration> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Student> getParserForType() {
+  public com.google.protobuf.Parser<Registration> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.cluper.course_registration.Student getDefaultInstanceForType() {
+  public com.cluper.course_registration.Registration getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

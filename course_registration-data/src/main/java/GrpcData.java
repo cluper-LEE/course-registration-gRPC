@@ -14,5 +14,4 @@ public class GrpcData {
 
 		server.awaitTermination();
 	}
-
 }

@@ -1,11 +1,12 @@
 package utils;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
 
 import com.cluper.course_registration.Course;
+import com.cluper.course_registration.Courses;
 import com.cluper.course_registration.Student;
+import com.cluper.course_registration.Students;
 
 public final class PrintFormat {
 	
@@ -18,40 +19,32 @@ public final class PrintFormat {
 				);
 	}
 	
-	public static String toString(List<Course> courses) {
-		StringJoiner sj = new StringJoiner("\n\n");
-		for(Course course: courses) {
-			sj.add(PrintFormat.toString(course));
+	public static String toString(Courses courses) {
+		StringJoiner sj = new StringJoiner("\n");
+		for(Course course : courses.getCourseList()) {
+			sj.add(toString(course));
 		}
 		return sj.toString();
 	}
 	
-	public static String toString(Student student, boolean withCourses) {
-		if(withCourses) {
-			StringJoiner sj1 = new StringJoiner("\n");
-			sj1.add("Student ID: " + student.getStudentId());
-			sj1.add("Name: " + student.getLastName() + " " + student.getFirstName());
-			sj1.add("Count. applied courses: " + student.getCoursesCount());
-			sj1.add("Applied courses:");
-			StringJoiner sj2 = new StringJoiner("\n\t");
-			sj2.add(sj1.toString());
-			for(Course course: student.getCoursesList()) {
-				sj2.add(PrintFormat.toString(course));
-			}
-			return sj2.toString();
-		} else {			
-			return String.format(
-					"[Student ID: %s\tName: %s]", 
-					student.getStudentId(),
-					student.getLastName() + " " + student.getFirstName()
-			);
+	public static String toString(Student student) {
+		StringJoiner sj1 = new StringJoiner("\n");
+		sj1.add("Student ID: " + student.getStudentId());
+		sj1.add("Name: " + student.getLastName() + " " + student.getFirstName());
+		sj1.add("Count. applied courses: " + student.getCourseIdCount());
+		sj1.add("Applied courses:");
+		StringJoiner sj2 = new StringJoiner(" ");
+		sj2.add(sj1.toString());
+		for(String courseID: student.getCourseIdList()) {
+			sj2.add(courseID);
 		}
+		return sj2.toString();
 	}
 	
-	public static String toString (List<Student> students, boolean withCourses) {
+	public static String toString (Students students) {
 		StringJoiner sj = new StringJoiner("\n\n");
-		for(Student student: students) {
-			sj.add(PrintFormat.toString(student, withCourses));
+		for(Student student: students.getStudentsList()) {
+			sj.add(PrintFormat.toString(student));
 		}
 		return sj.toString();
 	}

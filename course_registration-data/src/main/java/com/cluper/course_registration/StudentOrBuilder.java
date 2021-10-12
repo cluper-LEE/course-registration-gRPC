@@ -44,26 +44,39 @@ public interface StudentOrBuilder extends
       getFirstNameBytes();
 
   /**
-   * <code>repeated .university.Course courses = 4;</code>
+   * <code>string department = 4;</code>
+   * @return The department.
    */
-  java.util.List<com.cluper.course_registration.Course> 
-      getCoursesList();
+  java.lang.String getDepartment();
   /**
-   * <code>repeated .university.Course courses = 4;</code>
+   * <code>string department = 4;</code>
+   * @return The bytes for department.
    */
-  com.cluper.course_registration.Course getCourses(int index);
+  com.google.protobuf.ByteString
+      getDepartmentBytes();
+
   /**
-   * <code>repeated .university.Course courses = 4;</code>
+   * <code>repeated string course_id = 5;</code>
+   * @return A list containing the courseId.
    */
-  int getCoursesCount();
+  java.util.List<java.lang.String>
+      getCourseIdList();
   /**
-   * <code>repeated .university.Course courses = 4;</code>
+   * <code>repeated string course_id = 5;</code>
+   * @return The count of courseId.
    */
-  java.util.List<? extends com.cluper.course_registration.CourseOrBuilder> 
-      getCoursesOrBuilderList();
+  int getCourseIdCount();
   /**
-   * <code>repeated .university.Course courses = 4;</code>
+   * <code>repeated string course_id = 5;</code>
+   * @param index The index of the element to return.
+   * @return The courseId at the given index.
    */
-  com.cluper.course_registration.CourseOrBuilder getCoursesOrBuilder(
-      int index);
+  java.lang.String getCourseId(int index);
+  /**
+   * <code>repeated string course_id = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the courseId at the given index.
+   */
+  com.google.protobuf.ByteString
+      getCourseIdBytes(int index);
 }

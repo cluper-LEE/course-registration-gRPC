@@ -7,27 +7,34 @@ option java_outer_classname = "University";
 package university;
 
 service SearchService{
-	rpc GetAllStudents(Empty) returns (StudentResponse);
-	rpc GetAllCourses(Empty) returns (CourseResponse);
+	rpc GetAllStudents(Empty) returns (Students);
+	rpc GetAllCourses(Empty) returns (Courses);
+	rpc AddStudent(Student) returns (ResponseMessage);
+	rpc DeleteStudent(Student) returns (ResponseMessage);
+	rpc AddCourse(Course) returns (ResponseMessage);
+	rpc DeleteCourse(Course) returns (ResponseMessage);
+	rpc MakeRegistration(Registration) returns (ResponseMessage);
 }
 
-message StudetRequest{
-	Student student = 1;
-}
-
-message StudentResponse{
+message Students{
 	repeated Student students = 1;
 }
 
-message CourseResponse{
+message Courses{
 	repeated Course course = 1;
+}
+
+message Registration{
+	string student_id = 1;
+	repeated string course_id = 2;
 }
 
 message Student {
 	string student_id = 1;
 	string last_name = 2;
 	string first_name = 3;
-	repeated Course courses = 4;
+	string department = 4;
+	repeated string course_id = 5;
 }
 
 message Course{
@@ -38,4 +45,9 @@ message Course{
 
 message Empty{
 
+}
+
+message ResponseMessage{
+	bool success = 1;
+	string message = 2;
 }

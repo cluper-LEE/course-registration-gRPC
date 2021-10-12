@@ -1,9 +1,7 @@
 import java.io.IOException;
 
-import com.cluper.course_registration.Empty;
 import com.cluper.course_registration.SearchServiceGrpc;
 import com.cluper.course_registration.SearchServiceGrpc.SearchServiceBlockingStub;
-import com.cluper.course_registration.StudentResponse;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;

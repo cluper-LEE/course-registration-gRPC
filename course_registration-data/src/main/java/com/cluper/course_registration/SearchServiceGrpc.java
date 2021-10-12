@@ -28,21 +28,21 @@ public final class SearchServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.cluper.course_registration.Empty,
-      com.cluper.course_registration.StudentResponse> getGetAllStudentsMethod;
+      com.cluper.course_registration.Students> getGetAllStudentsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetAllStudents",
       requestType = com.cluper.course_registration.Empty.class,
-      responseType = com.cluper.course_registration.StudentResponse.class,
+      responseType = com.cluper.course_registration.Students.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.cluper.course_registration.Empty,
-      com.cluper.course_registration.StudentResponse> getGetAllStudentsMethod() {
-    io.grpc.MethodDescriptor<com.cluper.course_registration.Empty, com.cluper.course_registration.StudentResponse> getGetAllStudentsMethod;
+      com.cluper.course_registration.Students> getGetAllStudentsMethod() {
+    io.grpc.MethodDescriptor<com.cluper.course_registration.Empty, com.cluper.course_registration.Students> getGetAllStudentsMethod;
     if ((getGetAllStudentsMethod = SearchServiceGrpc.getGetAllStudentsMethod) == null) {
       synchronized (SearchServiceGrpc.class) {
         if ((getGetAllStudentsMethod = SearchServiceGrpc.getGetAllStudentsMethod) == null) {
           SearchServiceGrpc.getGetAllStudentsMethod = getGetAllStudentsMethod = 
-              io.grpc.MethodDescriptor.<com.cluper.course_registration.Empty, com.cluper.course_registration.StudentResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.cluper.course_registration.Empty, com.cluper.course_registration.Students>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "university.SearchService", "GetAllStudents"))
@@ -50,7 +50,7 @@ public final class SearchServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.cluper.course_registration.StudentResponse.getDefaultInstance()))
+                  com.cluper.course_registration.Students.getDefaultInstance()))
                   .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("GetAllStudents"))
                   .build();
           }
@@ -60,21 +60,21 @@ public final class SearchServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.cluper.course_registration.Empty,
-      com.cluper.course_registration.CourseResponse> getGetAllCoursesMethod;
+      com.cluper.course_registration.Courses> getGetAllCoursesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetAllCourses",
       requestType = com.cluper.course_registration.Empty.class,
-      responseType = com.cluper.course_registration.CourseResponse.class,
+      responseType = com.cluper.course_registration.Courses.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.cluper.course_registration.Empty,
-      com.cluper.course_registration.CourseResponse> getGetAllCoursesMethod() {
-    io.grpc.MethodDescriptor<com.cluper.course_registration.Empty, com.cluper.course_registration.CourseResponse> getGetAllCoursesMethod;
+      com.cluper.course_registration.Courses> getGetAllCoursesMethod() {
+    io.grpc.MethodDescriptor<com.cluper.course_registration.Empty, com.cluper.course_registration.Courses> getGetAllCoursesMethod;
     if ((getGetAllCoursesMethod = SearchServiceGrpc.getGetAllCoursesMethod) == null) {
       synchronized (SearchServiceGrpc.class) {
         if ((getGetAllCoursesMethod = SearchServiceGrpc.getGetAllCoursesMethod) == null) {
           SearchServiceGrpc.getGetAllCoursesMethod = getGetAllCoursesMethod = 
-              io.grpc.MethodDescriptor.<com.cluper.course_registration.Empty, com.cluper.course_registration.CourseResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.cluper.course_registration.Empty, com.cluper.course_registration.Courses>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "university.SearchService", "GetAllCourses"))
@@ -82,13 +82,173 @@ public final class SearchServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.cluper.course_registration.CourseResponse.getDefaultInstance()))
+                  com.cluper.course_registration.Courses.getDefaultInstance()))
                   .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("GetAllCourses"))
                   .build();
           }
         }
      }
      return getGetAllCoursesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.cluper.course_registration.Student,
+      com.cluper.course_registration.ResponseMessage> getAddStudentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddStudent",
+      requestType = com.cluper.course_registration.Student.class,
+      responseType = com.cluper.course_registration.ResponseMessage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.cluper.course_registration.Student,
+      com.cluper.course_registration.ResponseMessage> getAddStudentMethod() {
+    io.grpc.MethodDescriptor<com.cluper.course_registration.Student, com.cluper.course_registration.ResponseMessage> getAddStudentMethod;
+    if ((getAddStudentMethod = SearchServiceGrpc.getAddStudentMethod) == null) {
+      synchronized (SearchServiceGrpc.class) {
+        if ((getAddStudentMethod = SearchServiceGrpc.getAddStudentMethod) == null) {
+          SearchServiceGrpc.getAddStudentMethod = getAddStudentMethod = 
+              io.grpc.MethodDescriptor.<com.cluper.course_registration.Student, com.cluper.course_registration.ResponseMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "university.SearchService", "AddStudent"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cluper.course_registration.Student.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cluper.course_registration.ResponseMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("AddStudent"))
+                  .build();
+          }
+        }
+     }
+     return getAddStudentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.cluper.course_registration.Student,
+      com.cluper.course_registration.ResponseMessage> getDeleteStudentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteStudent",
+      requestType = com.cluper.course_registration.Student.class,
+      responseType = com.cluper.course_registration.ResponseMessage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.cluper.course_registration.Student,
+      com.cluper.course_registration.ResponseMessage> getDeleteStudentMethod() {
+    io.grpc.MethodDescriptor<com.cluper.course_registration.Student, com.cluper.course_registration.ResponseMessage> getDeleteStudentMethod;
+    if ((getDeleteStudentMethod = SearchServiceGrpc.getDeleteStudentMethod) == null) {
+      synchronized (SearchServiceGrpc.class) {
+        if ((getDeleteStudentMethod = SearchServiceGrpc.getDeleteStudentMethod) == null) {
+          SearchServiceGrpc.getDeleteStudentMethod = getDeleteStudentMethod = 
+              io.grpc.MethodDescriptor.<com.cluper.course_registration.Student, com.cluper.course_registration.ResponseMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "university.SearchService", "DeleteStudent"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cluper.course_registration.Student.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cluper.course_registration.ResponseMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("DeleteStudent"))
+                  .build();
+          }
+        }
+     }
+     return getDeleteStudentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.cluper.course_registration.Course,
+      com.cluper.course_registration.ResponseMessage> getAddCourseMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddCourse",
+      requestType = com.cluper.course_registration.Course.class,
+      responseType = com.cluper.course_registration.ResponseMessage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.cluper.course_registration.Course,
+      com.cluper.course_registration.ResponseMessage> getAddCourseMethod() {
+    io.grpc.MethodDescriptor<com.cluper.course_registration.Course, com.cluper.course_registration.ResponseMessage> getAddCourseMethod;
+    if ((getAddCourseMethod = SearchServiceGrpc.getAddCourseMethod) == null) {
+      synchronized (SearchServiceGrpc.class) {
+        if ((getAddCourseMethod = SearchServiceGrpc.getAddCourseMethod) == null) {
+          SearchServiceGrpc.getAddCourseMethod = getAddCourseMethod = 
+              io.grpc.MethodDescriptor.<com.cluper.course_registration.Course, com.cluper.course_registration.ResponseMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "university.SearchService", "AddCourse"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cluper.course_registration.Course.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cluper.course_registration.ResponseMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("AddCourse"))
+                  .build();
+          }
+        }
+     }
+     return getAddCourseMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.cluper.course_registration.Course,
+      com.cluper.course_registration.ResponseMessage> getDeleteCourseMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCourse",
+      requestType = com.cluper.course_registration.Course.class,
+      responseType = com.cluper.course_registration.ResponseMessage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.cluper.course_registration.Course,
+      com.cluper.course_registration.ResponseMessage> getDeleteCourseMethod() {
+    io.grpc.MethodDescriptor<com.cluper.course_registration.Course, com.cluper.course_registration.ResponseMessage> getDeleteCourseMethod;
+    if ((getDeleteCourseMethod = SearchServiceGrpc.getDeleteCourseMethod) == null) {
+      synchronized (SearchServiceGrpc.class) {
+        if ((getDeleteCourseMethod = SearchServiceGrpc.getDeleteCourseMethod) == null) {
+          SearchServiceGrpc.getDeleteCourseMethod = getDeleteCourseMethod = 
+              io.grpc.MethodDescriptor.<com.cluper.course_registration.Course, com.cluper.course_registration.ResponseMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "university.SearchService", "DeleteCourse"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cluper.course_registration.Course.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cluper.course_registration.ResponseMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("DeleteCourse"))
+                  .build();
+          }
+        }
+     }
+     return getDeleteCourseMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.cluper.course_registration.Registration,
+      com.cluper.course_registration.ResponseMessage> getMakeRegistrationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MakeRegistration",
+      requestType = com.cluper.course_registration.Registration.class,
+      responseType = com.cluper.course_registration.ResponseMessage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.cluper.course_registration.Registration,
+      com.cluper.course_registration.ResponseMessage> getMakeRegistrationMethod() {
+    io.grpc.MethodDescriptor<com.cluper.course_registration.Registration, com.cluper.course_registration.ResponseMessage> getMakeRegistrationMethod;
+    if ((getMakeRegistrationMethod = SearchServiceGrpc.getMakeRegistrationMethod) == null) {
+      synchronized (SearchServiceGrpc.class) {
+        if ((getMakeRegistrationMethod = SearchServiceGrpc.getMakeRegistrationMethod) == null) {
+          SearchServiceGrpc.getMakeRegistrationMethod = getMakeRegistrationMethod = 
+              io.grpc.MethodDescriptor.<com.cluper.course_registration.Registration, com.cluper.course_registration.ResponseMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "university.SearchService", "MakeRegistration"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cluper.course_registration.Registration.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cluper.course_registration.ResponseMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("MakeRegistration"))
+                  .build();
+          }
+        }
+     }
+     return getMakeRegistrationMethod;
   }
 
   /**
@@ -121,15 +281,50 @@ public final class SearchServiceGrpc {
     /**
      */
     public void getAllStudents(com.cluper.course_registration.Empty request,
-        io.grpc.stub.StreamObserver<com.cluper.course_registration.StudentResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.cluper.course_registration.Students> responseObserver) {
       asyncUnimplementedUnaryCall(getGetAllStudentsMethod(), responseObserver);
     }
 
     /**
      */
     public void getAllCourses(com.cluper.course_registration.Empty request,
-        io.grpc.stub.StreamObserver<com.cluper.course_registration.CourseResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.cluper.course_registration.Courses> responseObserver) {
       asyncUnimplementedUnaryCall(getGetAllCoursesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void addStudent(com.cluper.course_registration.Student request,
+        io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getAddStudentMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void deleteStudent(com.cluper.course_registration.Student request,
+        io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteStudentMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void addCourse(com.cluper.course_registration.Course request,
+        io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getAddCourseMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void deleteCourse(com.cluper.course_registration.Course request,
+        io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteCourseMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void makeRegistration(com.cluper.course_registration.Registration request,
+        io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getMakeRegistrationMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -139,15 +334,50 @@ public final class SearchServiceGrpc {
             asyncUnaryCall(
               new MethodHandlers<
                 com.cluper.course_registration.Empty,
-                com.cluper.course_registration.StudentResponse>(
+                com.cluper.course_registration.Students>(
                   this, METHODID_GET_ALL_STUDENTS)))
           .addMethod(
             getGetAllCoursesMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 com.cluper.course_registration.Empty,
-                com.cluper.course_registration.CourseResponse>(
+                com.cluper.course_registration.Courses>(
                   this, METHODID_GET_ALL_COURSES)))
+          .addMethod(
+            getAddStudentMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.cluper.course_registration.Student,
+                com.cluper.course_registration.ResponseMessage>(
+                  this, METHODID_ADD_STUDENT)))
+          .addMethod(
+            getDeleteStudentMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.cluper.course_registration.Student,
+                com.cluper.course_registration.ResponseMessage>(
+                  this, METHODID_DELETE_STUDENT)))
+          .addMethod(
+            getAddCourseMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.cluper.course_registration.Course,
+                com.cluper.course_registration.ResponseMessage>(
+                  this, METHODID_ADD_COURSE)))
+          .addMethod(
+            getDeleteCourseMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.cluper.course_registration.Course,
+                com.cluper.course_registration.ResponseMessage>(
+                  this, METHODID_DELETE_COURSE)))
+          .addMethod(
+            getMakeRegistrationMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.cluper.course_registration.Registration,
+                com.cluper.course_registration.ResponseMessage>(
+                  this, METHODID_MAKE_REGISTRATION)))
           .build();
     }
   }
@@ -173,7 +403,7 @@ public final class SearchServiceGrpc {
     /**
      */
     public void getAllStudents(com.cluper.course_registration.Empty request,
-        io.grpc.stub.StreamObserver<com.cluper.course_registration.StudentResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.cluper.course_registration.Students> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetAllStudentsMethod(), getCallOptions()), request, responseObserver);
     }
@@ -181,9 +411,49 @@ public final class SearchServiceGrpc {
     /**
      */
     public void getAllCourses(com.cluper.course_registration.Empty request,
-        io.grpc.stub.StreamObserver<com.cluper.course_registration.CourseResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.cluper.course_registration.Courses> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetAllCoursesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void addStudent(com.cluper.course_registration.Student request,
+        io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getAddStudentMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteStudent(com.cluper.course_registration.Student request,
+        io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteStudentMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void addCourse(com.cluper.course_registration.Course request,
+        io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getAddCourseMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteCourse(com.cluper.course_registration.Course request,
+        io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteCourseMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void makeRegistration(com.cluper.course_registration.Registration request,
+        io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getMakeRegistrationMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -207,16 +477,51 @@ public final class SearchServiceGrpc {
 
     /**
      */
-    public com.cluper.course_registration.StudentResponse getAllStudents(com.cluper.course_registration.Empty request) {
+    public com.cluper.course_registration.Students getAllStudents(com.cluper.course_registration.Empty request) {
       return blockingUnaryCall(
           getChannel(), getGetAllStudentsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.cluper.course_registration.CourseResponse getAllCourses(com.cluper.course_registration.Empty request) {
+    public com.cluper.course_registration.Courses getAllCourses(com.cluper.course_registration.Empty request) {
       return blockingUnaryCall(
           getChannel(), getGetAllCoursesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.cluper.course_registration.ResponseMessage addStudent(com.cluper.course_registration.Student request) {
+      return blockingUnaryCall(
+          getChannel(), getAddStudentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.cluper.course_registration.ResponseMessage deleteStudent(com.cluper.course_registration.Student request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteStudentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.cluper.course_registration.ResponseMessage addCourse(com.cluper.course_registration.Course request) {
+      return blockingUnaryCall(
+          getChannel(), getAddCourseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.cluper.course_registration.ResponseMessage deleteCourse(com.cluper.course_registration.Course request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteCourseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.cluper.course_registration.ResponseMessage makeRegistration(com.cluper.course_registration.Registration request) {
+      return blockingUnaryCall(
+          getChannel(), getMakeRegistrationMethod(), getCallOptions(), request);
     }
   }
 
@@ -240,7 +545,7 @@ public final class SearchServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.cluper.course_registration.StudentResponse> getAllStudents(
+    public com.google.common.util.concurrent.ListenableFuture<com.cluper.course_registration.Students> getAllStudents(
         com.cluper.course_registration.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getGetAllStudentsMethod(), getCallOptions()), request);
@@ -248,15 +553,60 @@ public final class SearchServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.cluper.course_registration.CourseResponse> getAllCourses(
+    public com.google.common.util.concurrent.ListenableFuture<com.cluper.course_registration.Courses> getAllCourses(
         com.cluper.course_registration.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getGetAllCoursesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.cluper.course_registration.ResponseMessage> addStudent(
+        com.cluper.course_registration.Student request) {
+      return futureUnaryCall(
+          getChannel().newCall(getAddStudentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.cluper.course_registration.ResponseMessage> deleteStudent(
+        com.cluper.course_registration.Student request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteStudentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.cluper.course_registration.ResponseMessage> addCourse(
+        com.cluper.course_registration.Course request) {
+      return futureUnaryCall(
+          getChannel().newCall(getAddCourseMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.cluper.course_registration.ResponseMessage> deleteCourse(
+        com.cluper.course_registration.Course request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteCourseMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.cluper.course_registration.ResponseMessage> makeRegistration(
+        com.cluper.course_registration.Registration request) {
+      return futureUnaryCall(
+          getChannel().newCall(getMakeRegistrationMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_GET_ALL_STUDENTS = 0;
   private static final int METHODID_GET_ALL_COURSES = 1;
+  private static final int METHODID_ADD_STUDENT = 2;
+  private static final int METHODID_DELETE_STUDENT = 3;
+  private static final int METHODID_ADD_COURSE = 4;
+  private static final int METHODID_DELETE_COURSE = 5;
+  private static final int METHODID_MAKE_REGISTRATION = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -277,11 +627,31 @@ public final class SearchServiceGrpc {
       switch (methodId) {
         case METHODID_GET_ALL_STUDENTS:
           serviceImpl.getAllStudents((com.cluper.course_registration.Empty) request,
-              (io.grpc.stub.StreamObserver<com.cluper.course_registration.StudentResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.cluper.course_registration.Students>) responseObserver);
           break;
         case METHODID_GET_ALL_COURSES:
           serviceImpl.getAllCourses((com.cluper.course_registration.Empty) request,
-              (io.grpc.stub.StreamObserver<com.cluper.course_registration.CourseResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.cluper.course_registration.Courses>) responseObserver);
+          break;
+        case METHODID_ADD_STUDENT:
+          serviceImpl.addStudent((com.cluper.course_registration.Student) request,
+              (io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage>) responseObserver);
+          break;
+        case METHODID_DELETE_STUDENT:
+          serviceImpl.deleteStudent((com.cluper.course_registration.Student) request,
+              (io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage>) responseObserver);
+          break;
+        case METHODID_ADD_COURSE:
+          serviceImpl.addCourse((com.cluper.course_registration.Course) request,
+              (io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage>) responseObserver);
+          break;
+        case METHODID_DELETE_COURSE:
+          serviceImpl.deleteCourse((com.cluper.course_registration.Course) request,
+              (io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage>) responseObserver);
+          break;
+        case METHODID_MAKE_REGISTRATION:
+          serviceImpl.makeRegistration((com.cluper.course_registration.Registration) request,
+              (io.grpc.stub.StreamObserver<com.cluper.course_registration.ResponseMessage>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -346,6 +716,11 @@ public final class SearchServiceGrpc {
               .setSchemaDescriptor(new SearchServiceFileDescriptorSupplier())
               .addMethod(getGetAllStudentsMethod())
               .addMethod(getGetAllCoursesMethod())
+              .addMethod(getAddStudentMethod())
+              .addMethod(getDeleteStudentMethod())
+              .addMethod(getAddCourseMethod())
+              .addMethod(getDeleteCourseMethod())
+              .addMethod(getMakeRegistrationMethod())
               .build();
         }
       }
