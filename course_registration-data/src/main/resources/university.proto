@@ -7,26 +7,72 @@ option java_outer_classname = "University";
 package university;
 
 service SearchService{
-	rpc GetAllStudents(Empty) returns (Students);
-	rpc GetAllCourses(Empty) returns (Courses);
-	rpc AddStudent(Student) returns (ResponseMessage);
-	rpc DeleteStudent(Student) returns (ResponseMessage);
-	rpc AddCourse(Course) returns (ResponseMessage);
-	rpc DeleteCourse(Course) returns (ResponseMessage);
-	rpc MakeRegistration(Registration) returns (ResponseMessage);
+	rpc GetAllStudents(GetAllStudentsRequest) returns (GetAllStudentsResponse);
+	rpc AddStudent(AddStudentRequest) returns (AddStudentResponse);
+	rpc DeleteStudent(DeleteStudentRequest) returns (DeleteStudentResponse);
+	rpc GetAllCourses(GetAllCoursesRequest) returns (GetAllCoursesResponse);
+	rpc GetReservedCourses(GetReservedCoursesRequest) returns (GetReservedCoursesResponse);
+	rpc AddCourse(AddCourseRequest) returns (AddCourseResponse);
+	rpc DeleteCourse(DeleteCourseRequest) returns (DeleteCourseResponse);
+	rpc MakeReservation(MakeReservationRequest) returns (MakeReservationResponse);
+	rpc CancelReservation(CancelReservationRequest) returns (CancelReservationResponse);
+}
+
+message GetAllStudentsRequest{
+}
+message GetAllStudentsResponse{
+	repeated Student students = 1;
+}
+message AddStudentRequest{
+	Student student = 1;
+}
+message AddStudentResponse{
+	ResponseMessage response_message = 1;
+}
+message DeleteStudentRequest{
+	string student_id = 1;
+}
+message DeleteStudentResponse{
+	ResponseMessage response_message = 1;
+}
+message GetAllCoursesRequest{
+}
+message GetAllCoursesResponse{
+	repeated Course courses = 1;
+}
+message GetReservedCoursesRequest{
+	string student_id = 1;
+}
+message GetReservedCoursesResponse{
+	repeated Course courses = 1;
+}
+message AddCourseRequest{
+	Course course = 1;
+}
+message AddCourseResponse{
+	ResponseMessage response_message = 1;
+}
+message DeleteCourseRequest{
+	string course_id = 1;
+}
+message DeleteCourseResponse{
+	ResponseMessage response_message = 1;
+}
+message MakeReservationRequest{
+	Reservation reservation = 1;
+}
+message MakeReservationResponse{
+	ResponseMessage response_message = 1;
+}
+message CancelReservationRequest{
+	Reservation reservation = 1;
+}
+message CancelReservationResponse{
+	ResponseMessage response_message = 1;
 }
 
 message Students{
-	repeated Student students = 1;
-}
-
-message Courses{
-	repeated Course course = 1;
-}
-
-message Registration{
-	string student_id = 1;
-	repeated string course_id = 2;
+	repeated Student student = 1;
 }
 
 message Student {
@@ -41,10 +87,12 @@ message Course{
 	string course_id = 1;
 	string prof_name = 2;
 	string course_name = 3;
+	repeated string prerequisite = 4;
 }
 
-message Empty{
-
+message Reservation{
+	string student_id = 1;
+	repeated string course_id = 2;
 }
 
 message ResponseMessage{

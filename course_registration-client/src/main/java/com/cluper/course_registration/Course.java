@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     courseId_ = "";
     profName_ = "";
     courseName_ = "";
+    prerequisite_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -41,6 +42,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,6 +71,15 @@ private static final long serialVersionUID = 0L;
             courseName_ = s;
             break;
           }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              prerequisite_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            prerequisite_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -84,6 +95,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        prerequisite_ = prerequisite_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -209,6 +223,41 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PREREQUISITE_FIELD_NUMBER = 4;
+  private com.google.protobuf.LazyStringList prerequisite_;
+  /**
+   * <code>repeated string prerequisite = 4;</code>
+   * @return A list containing the prerequisite.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getPrerequisiteList() {
+    return prerequisite_;
+  }
+  /**
+   * <code>repeated string prerequisite = 4;</code>
+   * @return The count of prerequisite.
+   */
+  public int getPrerequisiteCount() {
+    return prerequisite_.size();
+  }
+  /**
+   * <code>repeated string prerequisite = 4;</code>
+   * @param index The index of the element to return.
+   * @return The prerequisite at the given index.
+   */
+  public java.lang.String getPrerequisite(int index) {
+    return prerequisite_.get(index);
+  }
+  /**
+   * <code>repeated string prerequisite = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the prerequisite at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getPrerequisiteBytes(int index) {
+    return prerequisite_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -232,6 +281,9 @@ private static final long serialVersionUID = 0L;
     if (!getCourseNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, courseName_);
     }
+    for (int i = 0; i < prerequisite_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, prerequisite_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -249,6 +301,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCourseNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, courseName_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < prerequisite_.size(); i++) {
+        dataSize += computeStringSizeNoTag(prerequisite_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getPrerequisiteList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -271,6 +331,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getProfName())) return false;
     if (!getCourseName()
         .equals(other.getCourseName())) return false;
+    if (!getPrerequisiteList()
+        .equals(other.getPrerequisiteList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -288,6 +350,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getProfName().hashCode();
     hash = (37 * hash) + COURSE_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getCourseName().hashCode();
+    if (getPrerequisiteCount() > 0) {
+      hash = (37 * hash) + PREREQUISITE_FIELD_NUMBER;
+      hash = (53 * hash) + getPrerequisiteList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -427,6 +493,8 @@ private static final long serialVersionUID = 0L;
 
       courseName_ = "";
 
+      prerequisite_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -453,9 +521,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.cluper.course_registration.Course buildPartial() {
       com.cluper.course_registration.Course result = new com.cluper.course_registration.Course(this);
+      int from_bitField0_ = bitField0_;
       result.courseId_ = courseId_;
       result.profName_ = profName_;
       result.courseName_ = courseName_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        prerequisite_ = prerequisite_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.prerequisite_ = prerequisite_;
       onBuilt();
       return result;
     }
@@ -516,6 +590,16 @@ private static final long serialVersionUID = 0L;
         courseName_ = other.courseName_;
         onChanged();
       }
+      if (!other.prerequisite_.isEmpty()) {
+        if (prerequisite_.isEmpty()) {
+          prerequisite_ = other.prerequisite_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensurePrerequisiteIsMutable();
+          prerequisite_.addAll(other.prerequisite_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -544,6 +628,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object courseId_ = "";
     /**
@@ -769,6 +854,116 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       courseName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList prerequisite_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensurePrerequisiteIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        prerequisite_ = new com.google.protobuf.LazyStringArrayList(prerequisite_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <code>repeated string prerequisite = 4;</code>
+     * @return A list containing the prerequisite.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getPrerequisiteList() {
+      return prerequisite_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string prerequisite = 4;</code>
+     * @return The count of prerequisite.
+     */
+    public int getPrerequisiteCount() {
+      return prerequisite_.size();
+    }
+    /**
+     * <code>repeated string prerequisite = 4;</code>
+     * @param index The index of the element to return.
+     * @return The prerequisite at the given index.
+     */
+    public java.lang.String getPrerequisite(int index) {
+      return prerequisite_.get(index);
+    }
+    /**
+     * <code>repeated string prerequisite = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the prerequisite at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getPrerequisiteBytes(int index) {
+      return prerequisite_.getByteString(index);
+    }
+    /**
+     * <code>repeated string prerequisite = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The prerequisite to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrerequisite(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePrerequisiteIsMutable();
+      prerequisite_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string prerequisite = 4;</code>
+     * @param value The prerequisite to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPrerequisite(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePrerequisiteIsMutable();
+      prerequisite_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string prerequisite = 4;</code>
+     * @param values The prerequisite to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPrerequisite(
+        java.lang.Iterable<java.lang.String> values) {
+      ensurePrerequisiteIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, prerequisite_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string prerequisite = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPrerequisite() {
+      prerequisite_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string prerequisite = 4;</code>
+     * @param value The bytes of the prerequisite to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPrerequisiteBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensurePrerequisiteIsMutable();
+      prerequisite_.add(value);
       onChanged();
       return this;
     }

@@ -4,24 +4,31 @@ import java.util.List;
 import java.util.StringJoiner;
 
 import com.cluper.course_registration.Course;
-import com.cluper.course_registration.Courses;
+import com.cluper.course_registration.Reservation;
 import com.cluper.course_registration.Student;
-import com.cluper.course_registration.Students;
 
 public final class PrintFormat {
-	
 	public static String toString(Course course) {
-		return String.format(
-				"[Course ID: %s\tCourse Name: %s\tProf: %s]", 
+		String retString = String.format(
+				"[Course ID: %s\tCourse Name: %s\tProf: %s", 
 				course.getCourseId(), 
 				course.getProfName(),
 				course.getCourseName() 
 				);
+		List<String> preIds = course.getPrerequisiteList();
+		if(preIds.size() > 0) {
+			retString += "\tPrerequisites: {";
+			for(String preId : preIds) {
+				retString += " " + preId;
+			}
+			retString += " }";
+		}
+		return retString + "]";
 	}
 	
-	public static String toString(Courses courses) {
+	public static String toString(Course[] courses) {
 		StringJoiner sj = new StringJoiner("\n");
-		for(Course course : courses.getCourseList()) {
+		for(Course course : courses) {
 			sj.add(toString(course));
 		}
 		return sj.toString();
@@ -41,10 +48,18 @@ public final class PrintFormat {
 		return sj2.toString();
 	}
 	
-	public static String toString (Students students) {
+	public static String toString (Student[] students) {
 		StringJoiner sj = new StringJoiner("\n\n");
-		for(Student student: students.getStudentsList()) {
+		for(Student student: students) {
 			sj.add(PrintFormat.toString(student));
+		}
+		return sj.toString();
+	}
+
+	public static String toString(Reservation reservation) {
+		StringJoiner sj = new StringJoiner(" ");
+		for(String courseId : reservation.getCourseIdList()) {
+			sj.add(courseId);
 		}
 		return sj.toString();
 	}

@@ -8,26 +8,26 @@ public interface StudentsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .university.Student students = 1;</code>
+   * <code>repeated .university.Student student = 1;</code>
    */
   java.util.List<com.cluper.course_registration.Student> 
-      getStudentsList();
+      getStudentList();
   /**
-   * <code>repeated .university.Student students = 1;</code>
+   * <code>repeated .university.Student student = 1;</code>
    */
-  com.cluper.course_registration.Student getStudents(int index);
+  com.cluper.course_registration.Student getStudent(int index);
   /**
-   * <code>repeated .university.Student students = 1;</code>
+   * <code>repeated .university.Student student = 1;</code>
    */
-  int getStudentsCount();
+  int getStudentCount();
   /**
-   * <code>repeated .university.Student students = 1;</code>
+   * <code>repeated .university.Student student = 1;</code>
    */
   java.util.List<? extends com.cluper.course_registration.StudentOrBuilder> 
-      getStudentsOrBuilderList();
+      getStudentOrBuilderList();
   /**
-   * <code>repeated .university.Student students = 1;</code>
+   * <code>repeated .university.Student student = 1;</code>
    */
-  com.cluper.course_registration.StudentOrBuilder getStudentsOrBuilder(
+  com.cluper.course_registration.StudentOrBuilder getStudentOrBuilder(
       int index);
 }

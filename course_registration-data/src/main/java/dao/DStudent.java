@@ -14,7 +14,7 @@ import config.EConst;
 import models.MStudent;
 
 public class DStudent {
-	public ArrayList<Student> getAllStudents(){
+	public ArrayList<Student> findAll(){
 		try(BufferedReader reader = new BufferedReader(new FileReader(new File(EConst.STUDENT_FILE_NAME.getValue())))) {
 			ArrayList<Student> students = new ArrayList<>();
 			MStudent mStudent = new MStudent();
@@ -22,6 +22,19 @@ public class DStudent {
 				students.add(mStudent.build());
 			}
 			return students;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public Student findOne(String studentId){
+		try(BufferedReader reader = new BufferedReader(new FileReader(new File(EConst.STUDENT_FILE_NAME.getValue())))) {
+			MStudent mStudent = new MStudent();
+			while(mStudent.read(reader)) {
+				if(mStudent.getStudentId().equals(studentId)) {
+					return mStudent.build();
+				}
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -50,7 +63,7 @@ public class DStudent {
 		return false;
 	}
 	public boolean delete(String studentId) {
-		ArrayList<Student> studentList = this.getAllStudents();
+		ArrayList<Student> studentList = this.findAll();
 		for(Student student : studentList) {
 			if(student.getStudentId().equals(studentId)) {
 				studentList.remove(student);
@@ -59,5 +72,8 @@ public class DStudent {
 			}
 		}
 		return false;
+	}
+	public boolean exists(String studentId) {
+		return (this.findOne(studentId)==null) ? false : true;
 	}
 }

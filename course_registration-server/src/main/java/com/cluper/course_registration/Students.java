@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Students() {
-    students_ = java.util.Collections.emptyList();
+    student_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -52,10 +52,10 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              students_ = new java.util.ArrayList<com.cluper.course_registration.Student>();
+              student_ = new java.util.ArrayList<com.cluper.course_registration.Student>();
               mutable_bitField0_ |= 0x00000001;
             }
-            students_.add(
+            student_.add(
                 input.readMessage(com.cluper.course_registration.Student.parser(), extensionRegistry));
             break;
           }
@@ -75,7 +75,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        students_ = java.util.Collections.unmodifiableList(students_);
+        student_ = java.util.Collections.unmodifiableList(student_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -94,39 +94,39 @@ private static final long serialVersionUID = 0L;
             com.cluper.course_registration.Students.class, com.cluper.course_registration.Students.Builder.class);
   }
 
-  public static final int STUDENTS_FIELD_NUMBER = 1;
-  private java.util.List<com.cluper.course_registration.Student> students_;
+  public static final int STUDENT_FIELD_NUMBER = 1;
+  private java.util.List<com.cluper.course_registration.Student> student_;
   /**
-   * <code>repeated .university.Student students = 1;</code>
+   * <code>repeated .university.Student student = 1;</code>
    */
-  public java.util.List<com.cluper.course_registration.Student> getStudentsList() {
-    return students_;
+  public java.util.List<com.cluper.course_registration.Student> getStudentList() {
+    return student_;
   }
   /**
-   * <code>repeated .university.Student students = 1;</code>
+   * <code>repeated .university.Student student = 1;</code>
    */
   public java.util.List<? extends com.cluper.course_registration.StudentOrBuilder> 
-      getStudentsOrBuilderList() {
-    return students_;
+      getStudentOrBuilderList() {
+    return student_;
   }
   /**
-   * <code>repeated .university.Student students = 1;</code>
+   * <code>repeated .university.Student student = 1;</code>
    */
-  public int getStudentsCount() {
-    return students_.size();
+  public int getStudentCount() {
+    return student_.size();
   }
   /**
-   * <code>repeated .university.Student students = 1;</code>
+   * <code>repeated .university.Student student = 1;</code>
    */
-  public com.cluper.course_registration.Student getStudents(int index) {
-    return students_.get(index);
+  public com.cluper.course_registration.Student getStudent(int index) {
+    return student_.get(index);
   }
   /**
-   * <code>repeated .university.Student students = 1;</code>
+   * <code>repeated .university.Student student = 1;</code>
    */
-  public com.cluper.course_registration.StudentOrBuilder getStudentsOrBuilder(
+  public com.cluper.course_registration.StudentOrBuilder getStudentOrBuilder(
       int index) {
-    return students_.get(index);
+    return student_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -143,8 +143,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < students_.size(); i++) {
-      output.writeMessage(1, students_.get(i));
+    for (int i = 0; i < student_.size(); i++) {
+      output.writeMessage(1, student_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -155,9 +155,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < students_.size(); i++) {
+    for (int i = 0; i < student_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, students_.get(i));
+        .computeMessageSize(1, student_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -174,8 +174,8 @@ private static final long serialVersionUID = 0L;
     }
     com.cluper.course_registration.Students other = (com.cluper.course_registration.Students) obj;
 
-    if (!getStudentsList()
-        .equals(other.getStudentsList())) return false;
+    if (!getStudentList()
+        .equals(other.getStudentList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -187,9 +187,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getStudentsCount() > 0) {
-      hash = (37 * hash) + STUDENTS_FIELD_NUMBER;
-      hash = (53 * hash) + getStudentsList().hashCode();
+    if (getStudentCount() > 0) {
+      hash = (37 * hash) + STUDENT_FIELD_NUMBER;
+      hash = (53 * hash) + getStudentList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -319,17 +319,17 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getStudentsFieldBuilder();
+        getStudentFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (studentsBuilder_ == null) {
-        students_ = java.util.Collections.emptyList();
+      if (studentBuilder_ == null) {
+        student_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        studentsBuilder_.clear();
+        studentBuilder_.clear();
       }
       return this;
     }
@@ -358,14 +358,14 @@ private static final long serialVersionUID = 0L;
     public com.cluper.course_registration.Students buildPartial() {
       com.cluper.course_registration.Students result = new com.cluper.course_registration.Students(this);
       int from_bitField0_ = bitField0_;
-      if (studentsBuilder_ == null) {
+      if (studentBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          students_ = java.util.Collections.unmodifiableList(students_);
+          student_ = java.util.Collections.unmodifiableList(student_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.students_ = students_;
+        result.student_ = student_;
       } else {
-        result.students_ = studentsBuilder_.build();
+        result.student_ = studentBuilder_.build();
       }
       onBuilt();
       return result;
@@ -415,29 +415,29 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.cluper.course_registration.Students other) {
       if (other == com.cluper.course_registration.Students.getDefaultInstance()) return this;
-      if (studentsBuilder_ == null) {
-        if (!other.students_.isEmpty()) {
-          if (students_.isEmpty()) {
-            students_ = other.students_;
+      if (studentBuilder_ == null) {
+        if (!other.student_.isEmpty()) {
+          if (student_.isEmpty()) {
+            student_ = other.student_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureStudentsIsMutable();
-            students_.addAll(other.students_);
+            ensureStudentIsMutable();
+            student_.addAll(other.student_);
           }
           onChanged();
         }
       } else {
-        if (!other.students_.isEmpty()) {
-          if (studentsBuilder_.isEmpty()) {
-            studentsBuilder_.dispose();
-            studentsBuilder_ = null;
-            students_ = other.students_;
+        if (!other.student_.isEmpty()) {
+          if (studentBuilder_.isEmpty()) {
+            studentBuilder_.dispose();
+            studentBuilder_ = null;
+            student_ = other.student_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            studentsBuilder_ = 
+            studentBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getStudentsFieldBuilder() : null;
+                 getStudentFieldBuilder() : null;
           } else {
-            studentsBuilder_.addAllMessages(other.students_);
+            studentBuilder_.addAllMessages(other.student_);
           }
         }
       }
@@ -471,244 +471,244 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<com.cluper.course_registration.Student> students_ =
+    private java.util.List<com.cluper.course_registration.Student> student_ =
       java.util.Collections.emptyList();
-    private void ensureStudentsIsMutable() {
+    private void ensureStudentIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        students_ = new java.util.ArrayList<com.cluper.course_registration.Student>(students_);
+        student_ = new java.util.ArrayList<com.cluper.course_registration.Student>(student_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.cluper.course_registration.Student, com.cluper.course_registration.Student.Builder, com.cluper.course_registration.StudentOrBuilder> studentsBuilder_;
+        com.cluper.course_registration.Student, com.cluper.course_registration.Student.Builder, com.cluper.course_registration.StudentOrBuilder> studentBuilder_;
 
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public java.util.List<com.cluper.course_registration.Student> getStudentsList() {
-      if (studentsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(students_);
+    public java.util.List<com.cluper.course_registration.Student> getStudentList() {
+      if (studentBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(student_);
       } else {
-        return studentsBuilder_.getMessageList();
+        return studentBuilder_.getMessageList();
       }
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public int getStudentsCount() {
-      if (studentsBuilder_ == null) {
-        return students_.size();
+    public int getStudentCount() {
+      if (studentBuilder_ == null) {
+        return student_.size();
       } else {
-        return studentsBuilder_.getCount();
+        return studentBuilder_.getCount();
       }
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public com.cluper.course_registration.Student getStudents(int index) {
-      if (studentsBuilder_ == null) {
-        return students_.get(index);
+    public com.cluper.course_registration.Student getStudent(int index) {
+      if (studentBuilder_ == null) {
+        return student_.get(index);
       } else {
-        return studentsBuilder_.getMessage(index);
+        return studentBuilder_.getMessage(index);
       }
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public Builder setStudents(
+    public Builder setStudent(
         int index, com.cluper.course_registration.Student value) {
-      if (studentsBuilder_ == null) {
+      if (studentBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureStudentsIsMutable();
-        students_.set(index, value);
+        ensureStudentIsMutable();
+        student_.set(index, value);
         onChanged();
       } else {
-        studentsBuilder_.setMessage(index, value);
+        studentBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public Builder setStudents(
+    public Builder setStudent(
         int index, com.cluper.course_registration.Student.Builder builderForValue) {
-      if (studentsBuilder_ == null) {
-        ensureStudentsIsMutable();
-        students_.set(index, builderForValue.build());
+      if (studentBuilder_ == null) {
+        ensureStudentIsMutable();
+        student_.set(index, builderForValue.build());
         onChanged();
       } else {
-        studentsBuilder_.setMessage(index, builderForValue.build());
+        studentBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public Builder addStudents(com.cluper.course_registration.Student value) {
-      if (studentsBuilder_ == null) {
+    public Builder addStudent(com.cluper.course_registration.Student value) {
+      if (studentBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureStudentsIsMutable();
-        students_.add(value);
+        ensureStudentIsMutable();
+        student_.add(value);
         onChanged();
       } else {
-        studentsBuilder_.addMessage(value);
+        studentBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public Builder addStudents(
+    public Builder addStudent(
         int index, com.cluper.course_registration.Student value) {
-      if (studentsBuilder_ == null) {
+      if (studentBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureStudentsIsMutable();
-        students_.add(index, value);
+        ensureStudentIsMutable();
+        student_.add(index, value);
         onChanged();
       } else {
-        studentsBuilder_.addMessage(index, value);
+        studentBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public Builder addStudents(
+    public Builder addStudent(
         com.cluper.course_registration.Student.Builder builderForValue) {
-      if (studentsBuilder_ == null) {
-        ensureStudentsIsMutable();
-        students_.add(builderForValue.build());
+      if (studentBuilder_ == null) {
+        ensureStudentIsMutable();
+        student_.add(builderForValue.build());
         onChanged();
       } else {
-        studentsBuilder_.addMessage(builderForValue.build());
+        studentBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public Builder addStudents(
+    public Builder addStudent(
         int index, com.cluper.course_registration.Student.Builder builderForValue) {
-      if (studentsBuilder_ == null) {
-        ensureStudentsIsMutable();
-        students_.add(index, builderForValue.build());
+      if (studentBuilder_ == null) {
+        ensureStudentIsMutable();
+        student_.add(index, builderForValue.build());
         onChanged();
       } else {
-        studentsBuilder_.addMessage(index, builderForValue.build());
+        studentBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public Builder addAllStudents(
+    public Builder addAllStudent(
         java.lang.Iterable<? extends com.cluper.course_registration.Student> values) {
-      if (studentsBuilder_ == null) {
-        ensureStudentsIsMutable();
+      if (studentBuilder_ == null) {
+        ensureStudentIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, students_);
+            values, student_);
         onChanged();
       } else {
-        studentsBuilder_.addAllMessages(values);
+        studentBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public Builder clearStudents() {
-      if (studentsBuilder_ == null) {
-        students_ = java.util.Collections.emptyList();
+    public Builder clearStudent() {
+      if (studentBuilder_ == null) {
+        student_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        studentsBuilder_.clear();
+        studentBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public Builder removeStudents(int index) {
-      if (studentsBuilder_ == null) {
-        ensureStudentsIsMutable();
-        students_.remove(index);
+    public Builder removeStudent(int index) {
+      if (studentBuilder_ == null) {
+        ensureStudentIsMutable();
+        student_.remove(index);
         onChanged();
       } else {
-        studentsBuilder_.remove(index);
+        studentBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public com.cluper.course_registration.Student.Builder getStudentsBuilder(
+    public com.cluper.course_registration.Student.Builder getStudentBuilder(
         int index) {
-      return getStudentsFieldBuilder().getBuilder(index);
+      return getStudentFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public com.cluper.course_registration.StudentOrBuilder getStudentsOrBuilder(
+    public com.cluper.course_registration.StudentOrBuilder getStudentOrBuilder(
         int index) {
-      if (studentsBuilder_ == null) {
-        return students_.get(index);  } else {
-        return studentsBuilder_.getMessageOrBuilder(index);
+      if (studentBuilder_ == null) {
+        return student_.get(index);  } else {
+        return studentBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
     public java.util.List<? extends com.cluper.course_registration.StudentOrBuilder> 
-         getStudentsOrBuilderList() {
-      if (studentsBuilder_ != null) {
-        return studentsBuilder_.getMessageOrBuilderList();
+         getStudentOrBuilderList() {
+      if (studentBuilder_ != null) {
+        return studentBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(students_);
+        return java.util.Collections.unmodifiableList(student_);
       }
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public com.cluper.course_registration.Student.Builder addStudentsBuilder() {
-      return getStudentsFieldBuilder().addBuilder(
+    public com.cluper.course_registration.Student.Builder addStudentBuilder() {
+      return getStudentFieldBuilder().addBuilder(
           com.cluper.course_registration.Student.getDefaultInstance());
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
-    public com.cluper.course_registration.Student.Builder addStudentsBuilder(
+    public com.cluper.course_registration.Student.Builder addStudentBuilder(
         int index) {
-      return getStudentsFieldBuilder().addBuilder(
+      return getStudentFieldBuilder().addBuilder(
           index, com.cluper.course_registration.Student.getDefaultInstance());
     }
     /**
-     * <code>repeated .university.Student students = 1;</code>
+     * <code>repeated .university.Student student = 1;</code>
      */
     public java.util.List<com.cluper.course_registration.Student.Builder> 
-         getStudentsBuilderList() {
-      return getStudentsFieldBuilder().getBuilderList();
+         getStudentBuilderList() {
+      return getStudentFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.cluper.course_registration.Student, com.cluper.course_registration.Student.Builder, com.cluper.course_registration.StudentOrBuilder> 
-        getStudentsFieldBuilder() {
-      if (studentsBuilder_ == null) {
-        studentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getStudentFieldBuilder() {
+      if (studentBuilder_ == null) {
+        studentBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.cluper.course_registration.Student, com.cluper.course_registration.Student.Builder, com.cluper.course_registration.StudentOrBuilder>(
-                students_,
+                student_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        students_ = null;
+        student_ = null;
       }
-      return studentsBuilder_;
+      return studentBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

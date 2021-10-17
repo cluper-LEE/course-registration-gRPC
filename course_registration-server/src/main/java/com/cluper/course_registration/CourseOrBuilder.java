@@ -42,4 +42,29 @@ public interface CourseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCourseNameBytes();
+
+  /**
+   * <code>repeated string prerequisite = 4;</code>
+   * @return A list containing the prerequisite.
+   */
+  java.util.List<java.lang.String>
+      getPrerequisiteList();
+  /**
+   * <code>repeated string prerequisite = 4;</code>
+   * @return The count of prerequisite.
+   */
+  int getPrerequisiteCount();
+  /**
+   * <code>repeated string prerequisite = 4;</code>
+   * @param index The index of the element to return.
+   * @return The prerequisite at the given index.
+   */
+  java.lang.String getPrerequisite(int index);
+  /**
+   * <code>repeated string prerequisite = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the prerequisite at the given index.
+   */
+  com.google.protobuf.ByteString
+      getPrerequisiteBytes(int index);
 }

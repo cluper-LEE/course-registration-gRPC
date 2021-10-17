@@ -15,20 +15,100 @@ public final class University {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_GetAllStudentsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_GetAllStudentsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_GetAllStudentsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_GetAllStudentsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_AddStudentRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_AddStudentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_AddStudentResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_AddStudentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_DeleteStudentRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_DeleteStudentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_DeleteStudentResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_DeleteStudentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_GetAllCoursesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_GetAllCoursesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_GetAllCoursesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_GetAllCoursesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_GetReservedCoursesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_GetReservedCoursesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_GetReservedCoursesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_GetReservedCoursesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_AddCourseRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_AddCourseRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_AddCourseResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_AddCourseResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_DeleteCourseRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_DeleteCourseRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_DeleteCourseResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_DeleteCourseResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_MakeReservationRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_MakeReservationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_MakeReservationResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_MakeReservationResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_CancelReservationRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_CancelReservationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_university_CancelReservationResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_university_CancelReservationResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_university_Students_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_university_Students_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_university_Courses_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_university_Courses_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_university_Registration_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_university_Registration_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_university_Student_descriptor;
   static final 
@@ -40,10 +120,10 @@ public final class University {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_university_Course_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_university_Empty_descriptor;
+    internal_static_university_Reservation_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_university_Empty_fieldAccessorTable;
+      internal_static_university_Reservation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_university_ResponseMessage_descriptor;
   static final 
@@ -58,73 +138,205 @@ public final class University {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020university.proto\022\nuniversity\"1\n\010Studen" +
-      "ts\022%\n\010students\030\001 \003(\0132\023.university.Studen" +
-      "t\"-\n\007Courses\022\"\n\006course\030\001 \003(\0132\022.universit" +
-      "y.Course\"5\n\014Registration\022\022\n\nstudent_id\030\001" +
-      " \001(\t\022\021\n\tcourse_id\030\002 \003(\t\"k\n\007Student\022\022\n\nst" +
-      "udent_id\030\001 \001(\t\022\021\n\tlast_name\030\002 \001(\t\022\022\n\nfir" +
-      "st_name\030\003 \001(\t\022\022\n\ndepartment\030\004 \001(\t\022\021\n\tcou" +
-      "rse_id\030\005 \003(\t\"C\n\006Course\022\021\n\tcourse_id\030\001 \001(" +
-      "\t\022\021\n\tprof_name\030\002 \001(\t\022\023\n\013course_name\030\003 \001(" +
-      "\t\"\007\n\005Empty\"3\n\017ResponseMessage\022\017\n\007success" +
-      "\030\001 \001(\010\022\017\n\007message\030\002 \001(\t2\320\003\n\rSearchServic" +
-      "e\0229\n\016GetAllStudents\022\021.university.Empty\032\024" +
-      ".university.Students\0227\n\rGetAllCourses\022\021." +
-      "university.Empty\032\023.university.Courses\022>\n" +
-      "\nAddStudent\022\023.university.Student\032\033.unive" +
-      "rsity.ResponseMessage\022A\n\rDeleteStudent\022\023" +
-      ".university.Student\032\033.university.Respons" +
-      "eMessage\022<\n\tAddCourse\022\022.university.Cours" +
-      "e\032\033.university.ResponseMessage\022?\n\014Delete" +
-      "Course\022\022.university.Course\032\033.university." +
-      "ResponseMessage\022I\n\020MakeRegistration\022\030.un" +
-      "iversity.Registration\032\033.university.Respo" +
-      "nseMessageB.\n\036com.cluper.course_registra" +
-      "tionB\nUniversityP\001b\006proto3"
+      "\n\020university.proto\022\nuniversity\"\027\n\025GetAll" +
+      "StudentsRequest\"?\n\026GetAllStudentsRespons" +
+      "e\022%\n\010students\030\001 \003(\0132\023.university.Student" +
+      "\"9\n\021AddStudentRequest\022$\n\007student\030\001 \001(\0132\023" +
+      ".university.Student\"K\n\022AddStudentRespons" +
+      "e\0225\n\020response_message\030\001 \001(\0132\033.university" +
+      ".ResponseMessage\"*\n\024DeleteStudentRequest" +
+      "\022\022\n\nstudent_id\030\001 \001(\t\"N\n\025DeleteStudentRes" +
+      "ponse\0225\n\020response_message\030\001 \001(\0132\033.univer" +
+      "sity.ResponseMessage\"\026\n\024GetAllCoursesReq" +
+      "uest\"<\n\025GetAllCoursesResponse\022#\n\007courses" +
+      "\030\001 \003(\0132\022.university.Course\"/\n\031GetReserve" +
+      "dCoursesRequest\022\022\n\nstudent_id\030\001 \001(\t\"A\n\032G" +
+      "etReservedCoursesResponse\022#\n\007courses\030\001 \003" +
+      "(\0132\022.university.Course\"6\n\020AddCourseReque" +
+      "st\022\"\n\006course\030\001 \001(\0132\022.university.Course\"J" +
+      "\n\021AddCourseResponse\0225\n\020response_message\030" +
+      "\001 \001(\0132\033.university.ResponseMessage\"(\n\023De" +
+      "leteCourseRequest\022\021\n\tcourse_id\030\001 \001(\t\"M\n\024" +
+      "DeleteCourseResponse\0225\n\020response_message" +
+      "\030\001 \001(\0132\033.university.ResponseMessage\"F\n\026M" +
+      "akeReservationRequest\022,\n\013reservation\030\001 \001" +
+      "(\0132\027.university.Reservation\"P\n\027MakeReser" +
+      "vationResponse\0225\n\020response_message\030\001 \001(\013" +
+      "2\033.university.ResponseMessage\"H\n\030CancelR" +
+      "eservationRequest\022,\n\013reservation\030\001 \001(\0132\027" +
+      ".university.Reservation\"R\n\031CancelReserva" +
+      "tionResponse\0225\n\020response_message\030\001 \001(\0132\033" +
+      ".university.ResponseMessage\"0\n\010Students\022" +
+      "$\n\007student\030\001 \003(\0132\023.university.Student\"k\n" +
+      "\007Student\022\022\n\nstudent_id\030\001 \001(\t\022\021\n\tlast_nam" +
+      "e\030\002 \001(\t\022\022\n\nfirst_name\030\003 \001(\t\022\022\n\ndepartmen" +
+      "t\030\004 \001(\t\022\021\n\tcourse_id\030\005 \003(\t\"Y\n\006Course\022\021\n\t" +
+      "course_id\030\001 \001(\t\022\021\n\tprof_name\030\002 \001(\t\022\023\n\013co" +
+      "urse_name\030\003 \001(\t\022\024\n\014prerequisite\030\004 \003(\t\"4\n" +
+      "\013Reservation\022\022\n\nstudent_id\030\001 \001(\t\022\021\n\tcour" +
+      "se_id\030\002 \003(\t\"3\n\017ResponseMessage\022\017\n\007succes" +
+      "s\030\001 \001(\010\022\017\n\007message\030\002 \001(\t2\241\006\n\rSearchServi" +
+      "ce\022W\n\016GetAllStudents\022!.university.GetAll" +
+      "StudentsRequest\032\".university.GetAllStude" +
+      "ntsResponse\022K\n\nAddStudent\022\035.university.A" +
+      "ddStudentRequest\032\036.university.AddStudent" +
+      "Response\022T\n\rDeleteStudent\022 .university.D" +
+      "eleteStudentRequest\032!.university.DeleteS" +
+      "tudentResponse\022T\n\rGetAllCourses\022 .univer" +
+      "sity.GetAllCoursesRequest\032!.university.G" +
+      "etAllCoursesResponse\022c\n\022GetReservedCours" +
+      "es\022%.university.GetReservedCoursesReques" +
+      "t\032&.university.GetReservedCoursesRespons" +
+      "e\022H\n\tAddCourse\022\034.university.AddCourseReq" +
+      "uest\032\035.university.AddCourseResponse\022Q\n\014D" +
+      "eleteCourse\022\037.university.DeleteCourseReq" +
+      "uest\032 .university.DeleteCourseResponse\022Z" +
+      "\n\017MakeReservation\022\".university.MakeReser" +
+      "vationRequest\032#.university.MakeReservati" +
+      "onResponse\022`\n\021CancelReservation\022$.univer" +
+      "sity.CancelReservationRequest\032%.universi" +
+      "ty.CancelReservationResponseB.\n\036com.clup" +
+      "er.course_registrationB\nUniversityP\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_university_Students_descriptor =
+    internal_static_university_GetAllStudentsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_university_GetAllStudentsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_GetAllStudentsRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_university_GetAllStudentsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_university_GetAllStudentsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_GetAllStudentsResponse_descriptor,
+        new java.lang.String[] { "Students", });
+    internal_static_university_AddStudentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_university_AddStudentRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_AddStudentRequest_descriptor,
+        new java.lang.String[] { "Student", });
+    internal_static_university_AddStudentResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_university_AddStudentResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_AddStudentResponse_descriptor,
+        new java.lang.String[] { "ResponseMessage", });
+    internal_static_university_DeleteStudentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_university_DeleteStudentRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_DeleteStudentRequest_descriptor,
+        new java.lang.String[] { "StudentId", });
+    internal_static_university_DeleteStudentResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_university_DeleteStudentResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_DeleteStudentResponse_descriptor,
+        new java.lang.String[] { "ResponseMessage", });
+    internal_static_university_GetAllCoursesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_university_GetAllCoursesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_GetAllCoursesRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_university_GetAllCoursesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_university_GetAllCoursesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_GetAllCoursesResponse_descriptor,
+        new java.lang.String[] { "Courses", });
+    internal_static_university_GetReservedCoursesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_university_GetReservedCoursesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_GetReservedCoursesRequest_descriptor,
+        new java.lang.String[] { "StudentId", });
+    internal_static_university_GetReservedCoursesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_university_GetReservedCoursesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_GetReservedCoursesResponse_descriptor,
+        new java.lang.String[] { "Courses", });
+    internal_static_university_AddCourseRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_university_AddCourseRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_AddCourseRequest_descriptor,
+        new java.lang.String[] { "Course", });
+    internal_static_university_AddCourseResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_university_AddCourseResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_AddCourseResponse_descriptor,
+        new java.lang.String[] { "ResponseMessage", });
+    internal_static_university_DeleteCourseRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_university_DeleteCourseRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_DeleteCourseRequest_descriptor,
+        new java.lang.String[] { "CourseId", });
+    internal_static_university_DeleteCourseResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_university_DeleteCourseResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_DeleteCourseResponse_descriptor,
+        new java.lang.String[] { "ResponseMessage", });
+    internal_static_university_MakeReservationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_university_MakeReservationRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_MakeReservationRequest_descriptor,
+        new java.lang.String[] { "Reservation", });
+    internal_static_university_MakeReservationResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_university_MakeReservationResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_MakeReservationResponse_descriptor,
+        new java.lang.String[] { "ResponseMessage", });
+    internal_static_university_CancelReservationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_university_CancelReservationRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_CancelReservationRequest_descriptor,
+        new java.lang.String[] { "Reservation", });
+    internal_static_university_CancelReservationResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_university_CancelReservationResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_university_CancelReservationResponse_descriptor,
+        new java.lang.String[] { "ResponseMessage", });
+    internal_static_university_Students_descriptor =
+      getDescriptor().getMessageTypes().get(18);
     internal_static_university_Students_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_university_Students_descriptor,
-        new java.lang.String[] { "Students", });
-    internal_static_university_Courses_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_university_Courses_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_university_Courses_descriptor,
-        new java.lang.String[] { "Course", });
-    internal_static_university_Registration_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_university_Registration_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_university_Registration_descriptor,
-        new java.lang.String[] { "StudentId", "CourseId", });
+        new java.lang.String[] { "Student", });
     internal_static_university_Student_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_university_Student_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_university_Student_descriptor,
         new java.lang.String[] { "StudentId", "LastName", "FirstName", "Department", "CourseId", });
     internal_static_university_Course_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_university_Course_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_university_Course_descriptor,
-        new java.lang.String[] { "CourseId", "ProfName", "CourseName", });
-    internal_static_university_Empty_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_university_Empty_fieldAccessorTable = new
+        new java.lang.String[] { "CourseId", "ProfName", "CourseName", "Prerequisite", });
+    internal_static_university_Reservation_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_university_Reservation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_university_Empty_descriptor,
-        new java.lang.String[] { });
+        internal_static_university_Reservation_descriptor,
+        new java.lang.String[] { "StudentId", "CourseId", });
     internal_static_university_ResponseMessage_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_university_ResponseMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_university_ResponseMessage_descriptor,
