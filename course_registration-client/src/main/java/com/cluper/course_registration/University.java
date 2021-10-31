@@ -175,29 +175,29 @@ public final class University {
       "urse_name\030\003 \001(\t\022\024\n\014prerequisite\030\004 \003(\t\"4\n" +
       "\013Reservation\022\022\n\nstudent_id\030\001 \001(\t\022\021\n\tcour" +
       "se_id\030\002 \003(\t\"3\n\017ResponseMessage\022\017\n\007succes" +
-      "s\030\001 \001(\010\022\017\n\007message\030\002 \001(\t2\241\006\n\rSearchServi" +
-      "ce\022W\n\016GetAllStudents\022!.university.GetAll" +
-      "StudentsRequest\032\".university.GetAllStude" +
-      "ntsResponse\022K\n\nAddStudent\022\035.university.A" +
-      "ddStudentRequest\032\036.university.AddStudent" +
-      "Response\022T\n\rDeleteStudent\022 .university.D" +
-      "eleteStudentRequest\032!.university.DeleteS" +
-      "tudentResponse\022T\n\rGetAllCourses\022 .univer" +
-      "sity.GetAllCoursesRequest\032!.university.G" +
-      "etAllCoursesResponse\022c\n\022GetReservedCours" +
-      "es\022%.university.GetReservedCoursesReques" +
-      "t\032&.university.GetReservedCoursesRespons" +
-      "e\022H\n\tAddCourse\022\034.university.AddCourseReq" +
-      "uest\032\035.university.AddCourseResponse\022Q\n\014D" +
-      "eleteCourse\022\037.university.DeleteCourseReq" +
-      "uest\032 .university.DeleteCourseResponse\022Z" +
-      "\n\017MakeReservation\022\".university.MakeReser" +
-      "vationRequest\032#.university.MakeReservati" +
-      "onResponse\022`\n\021CancelReservation\022$.univer" +
-      "sity.CancelReservationRequest\032%.universi" +
-      "ty.CancelReservationResponseB.\n\036com.clup" +
-      "er.course_registrationB\nUniversityP\001b\006pr" +
-      "oto3"
+      "s\030\001 \001(\010\022\017\n\007message\030\002 \001(\t2\246\006\n\022Reservation" +
+      "Service\022W\n\016GetAllStudents\022!.university.G" +
+      "etAllStudentsRequest\032\".university.GetAll" +
+      "StudentsResponse\022K\n\nAddStudent\022\035.univers" +
+      "ity.AddStudentRequest\032\036.university.AddSt" +
+      "udentResponse\022T\n\rDeleteStudent\022 .univers" +
+      "ity.DeleteStudentRequest\032!.university.De" +
+      "leteStudentResponse\022T\n\rGetAllCourses\022 .u" +
+      "niversity.GetAllCoursesRequest\032!.univers" +
+      "ity.GetAllCoursesResponse\022c\n\022GetReserved" +
+      "Courses\022%.university.GetReservedCoursesR" +
+      "equest\032&.university.GetReservedCoursesRe" +
+      "sponse\022H\n\tAddCourse\022\034.university.AddCour" +
+      "seRequest\032\035.university.AddCourseResponse" +
+      "\022Q\n\014DeleteCourse\022\037.university.DeleteCour" +
+      "seRequest\032 .university.DeleteCourseRespo" +
+      "nse\022Z\n\017MakeReservation\022\".university.Make" +
+      "ReservationRequest\032#.university.MakeRese" +
+      "rvationResponse\022`\n\021CancelReservation\022$.u" +
+      "niversity.CancelReservationRequest\032%.uni" +
+      "versity.CancelReservationResponseB.\n\036com" +
+      ".cluper.course_registrationB\nUniversityP" +
+      "\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

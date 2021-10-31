@@ -6,7 +6,7 @@ option java_outer_classname = "University";
 
 package university;
 
-service SearchService{
+service ReservationService{
 	rpc GetAllStudents(GetAllStudentsRequest) returns (GetAllStudentsResponse);
 	rpc AddStudent(AddStudentRequest) returns (AddStudentResponse);
 	rpc DeleteStudent(DeleteStudentRequest) returns (DeleteStudentResponse);

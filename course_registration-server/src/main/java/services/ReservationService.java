@@ -18,16 +18,16 @@ import com.cluper.course_registration.GetReservedCoursesRequest;
 import com.cluper.course_registration.GetReservedCoursesResponse;
 import com.cluper.course_registration.MakeReservationRequest;
 import com.cluper.course_registration.MakeReservationResponse;
-import com.cluper.course_registration.SearchServiceGrpc.SearchServiceBlockingStub;
-import com.cluper.course_registration.SearchServiceGrpc.SearchServiceImplBase;
+import com.cluper.course_registration.ReservationServiceGrpc.ReservationServiceBlockingStub;
+import com.cluper.course_registration.ReservationServiceGrpc.ReservationServiceImplBase;
 
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 
-public class SearchService extends SearchServiceImplBase{
-	SearchServiceBlockingStub stub;
+public class ReservationService extends ReservationServiceImplBase{
+	ReservationServiceBlockingStub stub;
 	
-	public SearchService(SearchServiceBlockingStub stub) {
+	public ReservationService(ReservationServiceBlockingStub stub) {
 		this.stub = stub;
 	}
 

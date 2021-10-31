@@ -23,8 +23,8 @@ import com.cluper.course_registration.GetReservedCoursesResponse;
 import com.cluper.course_registration.MakeReservationRequest;
 import com.cluper.course_registration.MakeReservationResponse;
 import com.cluper.course_registration.Reservation;
+import com.cluper.course_registration.ReservationServiceGrpc.ReservationServiceImplBase;
 import com.cluper.course_registration.ResponseMessage;
-import com.cluper.course_registration.SearchServiceGrpc.SearchServiceImplBase;
 import com.cluper.course_registration.Student;
 
 import dao.DCourse;
@@ -34,12 +34,12 @@ import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.stub.StreamObserver;
 
-public class SearchService extends SearchServiceImplBase{
+public class ReservationService extends ReservationServiceImplBase{
 	private DStudent dStudent;
 	private DCourse dCourse;
 	private DReservation dRegistration;
 	
-	public SearchService() {
+	public ReservationService() {
 		this.dStudent = new DStudent();
 		this.dCourse = new DCourse();
 		this.dRegistration = new DReservation();
@@ -54,6 +54,8 @@ public class SearchService extends SearchServiceImplBase{
 		}
 		responseObserver.onCompleted();			
 	}
+	
+	
 	@Override
 	public void getAllCourses(GetAllCoursesRequest request, StreamObserver<GetAllCoursesResponse> responseObserver) {
 		List<Course> courseList = this.dCourse.findAll();
@@ -66,7 +68,10 @@ public class SearchService extends SearchServiceImplBase{
 	@Override
 	public void addStudent(AddStudentRequest request, StreamObserver<AddStudentResponse> responseObserver) {
 		Student student = request.getStudent();
-		if(this.studentAlreadyExists(responseObserver, student.getStudentId()) || 
+		
+		if(this.notNumber(responseObserver, student.getStudentId()) ||
+				this.notNumber(responseObserver, student.getCourseIdList()) ||
+				this.studentAlreadyExists(responseObserver, student.getStudentId()) || 
 				this.courseNotFound(responseObserver, student.getCourseIdList())) {
 			return;
 		}
@@ -84,7 +89,8 @@ public class SearchService extends SearchServiceImplBase{
 	}
 	@Override
 	public void deleteStudent(DeleteStudentRequest request, StreamObserver<DeleteStudentResponse> responseObserver) {
-		if(this.studentNotFound(responseObserver, request.getStudentId())) {
+		if(this.notNumber(responseObserver, request.getStudentId()) ||
+				this.studentNotFound(responseObserver, request.getStudentId())) {
 			return;
 		}
 		ResponseMessage.Builder responseMessageBuilder = ResponseMessage.newBuilder();
@@ -102,7 +108,8 @@ public class SearchService extends SearchServiceImplBase{
 	@Override
 	public void addCourse(AddCourseRequest request, StreamObserver<AddCourseResponse> responseObserver) {
 		Course course = request.getCourse();
-		if(this.courseAlreadyExists(responseObserver, course.getCourseId()) || 
+		if(this.notNumber(responseObserver, course.getCourseId()) ||
+				this.courseAlreadyExists(responseObserver, course.getCourseId()) || 
 				this.courseNotFound(responseObserver, course.getPrerequisiteList())) {
 			return;
 		}
@@ -120,7 +127,8 @@ public class SearchService extends SearchServiceImplBase{
 	}
 	@Override
 	public void deleteCourse(DeleteCourseRequest request, StreamObserver<DeleteCourseResponse> responseObserver) {
-		if(this.courseNotFound(responseObserver, request.getCourseId())) {
+		if(this.notNumber(responseObserver, request.getCourseId()) ||
+				this.courseNotFound(responseObserver, request.getCourseId())) {
 			return;
 		}
 		ResponseMessage.Builder responseMessageBuilder = ResponseMessage.newBuilder();
@@ -138,7 +146,9 @@ public class SearchService extends SearchServiceImplBase{
 	@Override
 	public void makeReservation(MakeReservationRequest request, StreamObserver<MakeReservationResponse> responseObserver) {
 		Reservation reservation = request.getReservation();
-		if(this.studentNotFound(responseObserver, reservation.getStudentId())) {
+		if(this.notNumber(responseObserver, reservation.getStudentId()) ||
+				this.notNumber(responseObserver, reservation.getCourseIdList()) ||
+				this.studentNotFound(responseObserver, reservation.getStudentId())) {
 			return;
 		}
 		Student student = this.dStudent.findOne(reservation.getStudentId());
@@ -165,7 +175,10 @@ public class SearchService extends SearchServiceImplBase{
 	@Override
 	public void cancelReservation(CancelReservationRequest request, StreamObserver<CancelReservationResponse> responseObserver) {
 		Reservation reservation = request.getReservation();
-		if(this.studentNotFound(responseObserver, reservation.getStudentId())) {
+		if(this.notNumber(responseObserver, reservation.getStudentId()) ||
+				this.notNumber(responseObserver, reservation.getCourseIdList()) ||
+				this.studentNotFound(responseObserver, reservation.getStudentId()) ||
+				this.courseNotFound(responseObserver, reservation.getCourseIdList())) {
 			return;
 		}
 		ResponseMessage.Builder responseMessageBuilder = ResponseMessage.newBuilder();
@@ -183,7 +196,8 @@ public class SearchService extends SearchServiceImplBase{
 	@Override
 	public void getReservedCourses(GetReservedCoursesRequest request,
 			StreamObserver<GetReservedCoursesResponse> responseObserver) {
-		if(this.studentNotFound(responseObserver, request.getStudentId())) {
+		if(this.notNumber(responseObserver, request.getStudentId()) ||
+				this.studentNotFound(responseObserver, request.getStudentId())) {
 			return;
 		}
 		Reservation reservation = this.dRegistration.findOne(request.getStudentId());
@@ -252,6 +266,22 @@ public class SearchService extends SearchServiceImplBase{
 			StatusException statusException = Status.Code.FAILED_PRECONDITION.toStatus().withDescription("Rejected due to prerequisite conditions").asException();
 			responseObserver.onError(statusException);
 			return true;
+		}
+		return false;
+	}
+	private boolean notNumber(StreamObserver<?> responseObserver, String str) {
+		if(!str.chars().allMatch(Character::isDigit)) {
+			StatusException statusException = Status.Code.INVALID_ARGUMENT.toStatus().withDescription(str + " is not a number. It must be a number").asException();
+			responseObserver.onError(statusException);
+			return true;
+		}
+		return false;
+	}
+	private boolean notNumber(StreamObserver<?> responseObserver, List<String> strs) {
+		for(String str : strs) {
+			if(this.notNumber(responseObserver, str)) {
+				return true;
+			}
 		}
 		return false;
 	}

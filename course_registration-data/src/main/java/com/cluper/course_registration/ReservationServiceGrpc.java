@@ -20,11 +20,11 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.15.0)",
     comments = "Source: university.proto")
-public final class SearchServiceGrpc {
+public final class ReservationServiceGrpc {
 
-  private SearchServiceGrpc() {}
+  private ReservationServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "university.SearchService";
+  public static final String SERVICE_NAME = "university.ReservationService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.cluper.course_registration.GetAllStudentsRequest,
@@ -38,20 +38,20 @@ public final class SearchServiceGrpc {
   public static io.grpc.MethodDescriptor<com.cluper.course_registration.GetAllStudentsRequest,
       com.cluper.course_registration.GetAllStudentsResponse> getGetAllStudentsMethod() {
     io.grpc.MethodDescriptor<com.cluper.course_registration.GetAllStudentsRequest, com.cluper.course_registration.GetAllStudentsResponse> getGetAllStudentsMethod;
-    if ((getGetAllStudentsMethod = SearchServiceGrpc.getGetAllStudentsMethod) == null) {
-      synchronized (SearchServiceGrpc.class) {
-        if ((getGetAllStudentsMethod = SearchServiceGrpc.getGetAllStudentsMethod) == null) {
-          SearchServiceGrpc.getGetAllStudentsMethod = getGetAllStudentsMethod = 
+    if ((getGetAllStudentsMethod = ReservationServiceGrpc.getGetAllStudentsMethod) == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getGetAllStudentsMethod = ReservationServiceGrpc.getGetAllStudentsMethod) == null) {
+          ReservationServiceGrpc.getGetAllStudentsMethod = getGetAllStudentsMethod = 
               io.grpc.MethodDescriptor.<com.cluper.course_registration.GetAllStudentsRequest, com.cluper.course_registration.GetAllStudentsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "university.SearchService", "GetAllStudents"))
+                  "university.ReservationService", "GetAllStudents"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.GetAllStudentsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.GetAllStudentsResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("GetAllStudents"))
+                  .setSchemaDescriptor(new ReservationServiceMethodDescriptorSupplier("GetAllStudents"))
                   .build();
           }
         }
@@ -70,20 +70,20 @@ public final class SearchServiceGrpc {
   public static io.grpc.MethodDescriptor<com.cluper.course_registration.AddStudentRequest,
       com.cluper.course_registration.AddStudentResponse> getAddStudentMethod() {
     io.grpc.MethodDescriptor<com.cluper.course_registration.AddStudentRequest, com.cluper.course_registration.AddStudentResponse> getAddStudentMethod;
-    if ((getAddStudentMethod = SearchServiceGrpc.getAddStudentMethod) == null) {
-      synchronized (SearchServiceGrpc.class) {
-        if ((getAddStudentMethod = SearchServiceGrpc.getAddStudentMethod) == null) {
-          SearchServiceGrpc.getAddStudentMethod = getAddStudentMethod = 
+    if ((getAddStudentMethod = ReservationServiceGrpc.getAddStudentMethod) == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getAddStudentMethod = ReservationServiceGrpc.getAddStudentMethod) == null) {
+          ReservationServiceGrpc.getAddStudentMethod = getAddStudentMethod = 
               io.grpc.MethodDescriptor.<com.cluper.course_registration.AddStudentRequest, com.cluper.course_registration.AddStudentResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "university.SearchService", "AddStudent"))
+                  "university.ReservationService", "AddStudent"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.AddStudentRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.AddStudentResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("AddStudent"))
+                  .setSchemaDescriptor(new ReservationServiceMethodDescriptorSupplier("AddStudent"))
                   .build();
           }
         }
@@ -102,20 +102,20 @@ public final class SearchServiceGrpc {
   public static io.grpc.MethodDescriptor<com.cluper.course_registration.DeleteStudentRequest,
       com.cluper.course_registration.DeleteStudentResponse> getDeleteStudentMethod() {
     io.grpc.MethodDescriptor<com.cluper.course_registration.DeleteStudentRequest, com.cluper.course_registration.DeleteStudentResponse> getDeleteStudentMethod;
-    if ((getDeleteStudentMethod = SearchServiceGrpc.getDeleteStudentMethod) == null) {
-      synchronized (SearchServiceGrpc.class) {
-        if ((getDeleteStudentMethod = SearchServiceGrpc.getDeleteStudentMethod) == null) {
-          SearchServiceGrpc.getDeleteStudentMethod = getDeleteStudentMethod = 
+    if ((getDeleteStudentMethod = ReservationServiceGrpc.getDeleteStudentMethod) == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getDeleteStudentMethod = ReservationServiceGrpc.getDeleteStudentMethod) == null) {
+          ReservationServiceGrpc.getDeleteStudentMethod = getDeleteStudentMethod = 
               io.grpc.MethodDescriptor.<com.cluper.course_registration.DeleteStudentRequest, com.cluper.course_registration.DeleteStudentResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "university.SearchService", "DeleteStudent"))
+                  "university.ReservationService", "DeleteStudent"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.DeleteStudentRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.DeleteStudentResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("DeleteStudent"))
+                  .setSchemaDescriptor(new ReservationServiceMethodDescriptorSupplier("DeleteStudent"))
                   .build();
           }
         }
@@ -134,20 +134,20 @@ public final class SearchServiceGrpc {
   public static io.grpc.MethodDescriptor<com.cluper.course_registration.GetAllCoursesRequest,
       com.cluper.course_registration.GetAllCoursesResponse> getGetAllCoursesMethod() {
     io.grpc.MethodDescriptor<com.cluper.course_registration.GetAllCoursesRequest, com.cluper.course_registration.GetAllCoursesResponse> getGetAllCoursesMethod;
-    if ((getGetAllCoursesMethod = SearchServiceGrpc.getGetAllCoursesMethod) == null) {
-      synchronized (SearchServiceGrpc.class) {
-        if ((getGetAllCoursesMethod = SearchServiceGrpc.getGetAllCoursesMethod) == null) {
-          SearchServiceGrpc.getGetAllCoursesMethod = getGetAllCoursesMethod = 
+    if ((getGetAllCoursesMethod = ReservationServiceGrpc.getGetAllCoursesMethod) == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getGetAllCoursesMethod = ReservationServiceGrpc.getGetAllCoursesMethod) == null) {
+          ReservationServiceGrpc.getGetAllCoursesMethod = getGetAllCoursesMethod = 
               io.grpc.MethodDescriptor.<com.cluper.course_registration.GetAllCoursesRequest, com.cluper.course_registration.GetAllCoursesResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "university.SearchService", "GetAllCourses"))
+                  "university.ReservationService", "GetAllCourses"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.GetAllCoursesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.GetAllCoursesResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("GetAllCourses"))
+                  .setSchemaDescriptor(new ReservationServiceMethodDescriptorSupplier("GetAllCourses"))
                   .build();
           }
         }
@@ -166,20 +166,20 @@ public final class SearchServiceGrpc {
   public static io.grpc.MethodDescriptor<com.cluper.course_registration.GetReservedCoursesRequest,
       com.cluper.course_registration.GetReservedCoursesResponse> getGetReservedCoursesMethod() {
     io.grpc.MethodDescriptor<com.cluper.course_registration.GetReservedCoursesRequest, com.cluper.course_registration.GetReservedCoursesResponse> getGetReservedCoursesMethod;
-    if ((getGetReservedCoursesMethod = SearchServiceGrpc.getGetReservedCoursesMethod) == null) {
-      synchronized (SearchServiceGrpc.class) {
-        if ((getGetReservedCoursesMethod = SearchServiceGrpc.getGetReservedCoursesMethod) == null) {
-          SearchServiceGrpc.getGetReservedCoursesMethod = getGetReservedCoursesMethod = 
+    if ((getGetReservedCoursesMethod = ReservationServiceGrpc.getGetReservedCoursesMethod) == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getGetReservedCoursesMethod = ReservationServiceGrpc.getGetReservedCoursesMethod) == null) {
+          ReservationServiceGrpc.getGetReservedCoursesMethod = getGetReservedCoursesMethod = 
               io.grpc.MethodDescriptor.<com.cluper.course_registration.GetReservedCoursesRequest, com.cluper.course_registration.GetReservedCoursesResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "university.SearchService", "GetReservedCourses"))
+                  "university.ReservationService", "GetReservedCourses"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.GetReservedCoursesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.GetReservedCoursesResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("GetReservedCourses"))
+                  .setSchemaDescriptor(new ReservationServiceMethodDescriptorSupplier("GetReservedCourses"))
                   .build();
           }
         }
@@ -198,20 +198,20 @@ public final class SearchServiceGrpc {
   public static io.grpc.MethodDescriptor<com.cluper.course_registration.AddCourseRequest,
       com.cluper.course_registration.AddCourseResponse> getAddCourseMethod() {
     io.grpc.MethodDescriptor<com.cluper.course_registration.AddCourseRequest, com.cluper.course_registration.AddCourseResponse> getAddCourseMethod;
-    if ((getAddCourseMethod = SearchServiceGrpc.getAddCourseMethod) == null) {
-      synchronized (SearchServiceGrpc.class) {
-        if ((getAddCourseMethod = SearchServiceGrpc.getAddCourseMethod) == null) {
-          SearchServiceGrpc.getAddCourseMethod = getAddCourseMethod = 
+    if ((getAddCourseMethod = ReservationServiceGrpc.getAddCourseMethod) == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getAddCourseMethod = ReservationServiceGrpc.getAddCourseMethod) == null) {
+          ReservationServiceGrpc.getAddCourseMethod = getAddCourseMethod = 
               io.grpc.MethodDescriptor.<com.cluper.course_registration.AddCourseRequest, com.cluper.course_registration.AddCourseResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "university.SearchService", "AddCourse"))
+                  "university.ReservationService", "AddCourse"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.AddCourseRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.AddCourseResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("AddCourse"))
+                  .setSchemaDescriptor(new ReservationServiceMethodDescriptorSupplier("AddCourse"))
                   .build();
           }
         }
@@ -230,20 +230,20 @@ public final class SearchServiceGrpc {
   public static io.grpc.MethodDescriptor<com.cluper.course_registration.DeleteCourseRequest,
       com.cluper.course_registration.DeleteCourseResponse> getDeleteCourseMethod() {
     io.grpc.MethodDescriptor<com.cluper.course_registration.DeleteCourseRequest, com.cluper.course_registration.DeleteCourseResponse> getDeleteCourseMethod;
-    if ((getDeleteCourseMethod = SearchServiceGrpc.getDeleteCourseMethod) == null) {
-      synchronized (SearchServiceGrpc.class) {
-        if ((getDeleteCourseMethod = SearchServiceGrpc.getDeleteCourseMethod) == null) {
-          SearchServiceGrpc.getDeleteCourseMethod = getDeleteCourseMethod = 
+    if ((getDeleteCourseMethod = ReservationServiceGrpc.getDeleteCourseMethod) == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getDeleteCourseMethod = ReservationServiceGrpc.getDeleteCourseMethod) == null) {
+          ReservationServiceGrpc.getDeleteCourseMethod = getDeleteCourseMethod = 
               io.grpc.MethodDescriptor.<com.cluper.course_registration.DeleteCourseRequest, com.cluper.course_registration.DeleteCourseResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "university.SearchService", "DeleteCourse"))
+                  "university.ReservationService", "DeleteCourse"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.DeleteCourseRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.DeleteCourseResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("DeleteCourse"))
+                  .setSchemaDescriptor(new ReservationServiceMethodDescriptorSupplier("DeleteCourse"))
                   .build();
           }
         }
@@ -262,20 +262,20 @@ public final class SearchServiceGrpc {
   public static io.grpc.MethodDescriptor<com.cluper.course_registration.MakeReservationRequest,
       com.cluper.course_registration.MakeReservationResponse> getMakeReservationMethod() {
     io.grpc.MethodDescriptor<com.cluper.course_registration.MakeReservationRequest, com.cluper.course_registration.MakeReservationResponse> getMakeReservationMethod;
-    if ((getMakeReservationMethod = SearchServiceGrpc.getMakeReservationMethod) == null) {
-      synchronized (SearchServiceGrpc.class) {
-        if ((getMakeReservationMethod = SearchServiceGrpc.getMakeReservationMethod) == null) {
-          SearchServiceGrpc.getMakeReservationMethod = getMakeReservationMethod = 
+    if ((getMakeReservationMethod = ReservationServiceGrpc.getMakeReservationMethod) == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getMakeReservationMethod = ReservationServiceGrpc.getMakeReservationMethod) == null) {
+          ReservationServiceGrpc.getMakeReservationMethod = getMakeReservationMethod = 
               io.grpc.MethodDescriptor.<com.cluper.course_registration.MakeReservationRequest, com.cluper.course_registration.MakeReservationResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "university.SearchService", "MakeReservation"))
+                  "university.ReservationService", "MakeReservation"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.MakeReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.MakeReservationResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("MakeReservation"))
+                  .setSchemaDescriptor(new ReservationServiceMethodDescriptorSupplier("MakeReservation"))
                   .build();
           }
         }
@@ -294,20 +294,20 @@ public final class SearchServiceGrpc {
   public static io.grpc.MethodDescriptor<com.cluper.course_registration.CancelReservationRequest,
       com.cluper.course_registration.CancelReservationResponse> getCancelReservationMethod() {
     io.grpc.MethodDescriptor<com.cluper.course_registration.CancelReservationRequest, com.cluper.course_registration.CancelReservationResponse> getCancelReservationMethod;
-    if ((getCancelReservationMethod = SearchServiceGrpc.getCancelReservationMethod) == null) {
-      synchronized (SearchServiceGrpc.class) {
-        if ((getCancelReservationMethod = SearchServiceGrpc.getCancelReservationMethod) == null) {
-          SearchServiceGrpc.getCancelReservationMethod = getCancelReservationMethod = 
+    if ((getCancelReservationMethod = ReservationServiceGrpc.getCancelReservationMethod) == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getCancelReservationMethod = ReservationServiceGrpc.getCancelReservationMethod) == null) {
+          ReservationServiceGrpc.getCancelReservationMethod = getCancelReservationMethod = 
               io.grpc.MethodDescriptor.<com.cluper.course_registration.CancelReservationRequest, com.cluper.course_registration.CancelReservationResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "university.SearchService", "CancelReservation"))
+                  "university.ReservationService", "CancelReservation"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.CancelReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.cluper.course_registration.CancelReservationResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("CancelReservation"))
+                  .setSchemaDescriptor(new ReservationServiceMethodDescriptorSupplier("CancelReservation"))
                   .build();
           }
         }
@@ -318,29 +318,29 @@ public final class SearchServiceGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static SearchServiceStub newStub(io.grpc.Channel channel) {
-    return new SearchServiceStub(channel);
+  public static ReservationServiceStub newStub(io.grpc.Channel channel) {
+    return new ReservationServiceStub(channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static SearchServiceBlockingStub newBlockingStub(
+  public static ReservationServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new SearchServiceBlockingStub(channel);
+    return new ReservationServiceBlockingStub(channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static SearchServiceFutureStub newFutureStub(
+  public static ReservationServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new SearchServiceFutureStub(channel);
+    return new ReservationServiceFutureStub(channel);
   }
 
   /**
    */
-  public static abstract class SearchServiceImplBase implements io.grpc.BindableService {
+  public static abstract class ReservationServiceImplBase implements io.grpc.BindableService {
 
     /**
      */
@@ -476,20 +476,20 @@ public final class SearchServiceGrpc {
 
   /**
    */
-  public static final class SearchServiceStub extends io.grpc.stub.AbstractStub<SearchServiceStub> {
-    private SearchServiceStub(io.grpc.Channel channel) {
+  public static final class ReservationServiceStub extends io.grpc.stub.AbstractStub<ReservationServiceStub> {
+    private ReservationServiceStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private SearchServiceStub(io.grpc.Channel channel,
+    private ReservationServiceStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected SearchServiceStub build(io.grpc.Channel channel,
+    protected ReservationServiceStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new SearchServiceStub(channel, callOptions);
+      return new ReservationServiceStub(channel, callOptions);
     }
 
     /**
@@ -567,20 +567,20 @@ public final class SearchServiceGrpc {
 
   /**
    */
-  public static final class SearchServiceBlockingStub extends io.grpc.stub.AbstractStub<SearchServiceBlockingStub> {
-    private SearchServiceBlockingStub(io.grpc.Channel channel) {
+  public static final class ReservationServiceBlockingStub extends io.grpc.stub.AbstractStub<ReservationServiceBlockingStub> {
+    private ReservationServiceBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private SearchServiceBlockingStub(io.grpc.Channel channel,
+    private ReservationServiceBlockingStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected SearchServiceBlockingStub build(io.grpc.Channel channel,
+    protected ReservationServiceBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new SearchServiceBlockingStub(channel, callOptions);
+      return new ReservationServiceBlockingStub(channel, callOptions);
     }
 
     /**
@@ -649,20 +649,20 @@ public final class SearchServiceGrpc {
 
   /**
    */
-  public static final class SearchServiceFutureStub extends io.grpc.stub.AbstractStub<SearchServiceFutureStub> {
-    private SearchServiceFutureStub(io.grpc.Channel channel) {
+  public static final class ReservationServiceFutureStub extends io.grpc.stub.AbstractStub<ReservationServiceFutureStub> {
+    private ReservationServiceFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private SearchServiceFutureStub(io.grpc.Channel channel,
+    private ReservationServiceFutureStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected SearchServiceFutureStub build(io.grpc.Channel channel,
+    protected ReservationServiceFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new SearchServiceFutureStub(channel, callOptions);
+      return new ReservationServiceFutureStub(channel, callOptions);
     }
 
     /**
@@ -753,10 +753,10 @@ public final class SearchServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SearchServiceImplBase serviceImpl;
+    private final ReservationServiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SearchServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(ReservationServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -817,9 +817,9 @@ public final class SearchServiceGrpc {
     }
   }
 
-  private static abstract class SearchServiceBaseDescriptorSupplier
+  private static abstract class ReservationServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    SearchServiceBaseDescriptorSupplier() {}
+    ReservationServiceBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
@@ -828,21 +828,21 @@ public final class SearchServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("SearchService");
+      return getFileDescriptor().findServiceByName("ReservationService");
     }
   }
 
-  private static final class SearchServiceFileDescriptorSupplier
-      extends SearchServiceBaseDescriptorSupplier {
-    SearchServiceFileDescriptorSupplier() {}
+  private static final class ReservationServiceFileDescriptorSupplier
+      extends ReservationServiceBaseDescriptorSupplier {
+    ReservationServiceFileDescriptorSupplier() {}
   }
 
-  private static final class SearchServiceMethodDescriptorSupplier
-      extends SearchServiceBaseDescriptorSupplier
+  private static final class ReservationServiceMethodDescriptorSupplier
+      extends ReservationServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    SearchServiceMethodDescriptorSupplier(String methodName) {
+    ReservationServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -857,11 +857,11 @@ public final class SearchServiceGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (SearchServiceGrpc.class) {
+      synchronized (ReservationServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new SearchServiceFileDescriptorSupplier())
+              .setSchemaDescriptor(new ReservationServiceFileDescriptorSupplier())
               .addMethod(getGetAllStudentsMethod())
               .addMethod(getAddStudentMethod())
               .addMethod(getDeleteStudentMethod())

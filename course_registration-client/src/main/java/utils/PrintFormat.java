@@ -1,6 +1,5 @@
 package utils;
 
-import java.util.List;
 import java.util.StringJoiner;
 
 import com.cluper.course_registration.Course;
@@ -9,25 +8,22 @@ import com.cluper.course_registration.Student;
 
 public final class PrintFormat {
 	public static String toString(Course course) {
-		String retString = String.format(
-				"[Course ID: %s\tCourse Name: %s\tProf: %s", 
-				course.getCourseId(), 
-				course.getProfName(),
-				course.getCourseName() 
-				);
-		List<String> preIds = course.getPrerequisiteList();
-		if(preIds.size() > 0) {
-			retString += "\tPrerequisites: {";
-			for(String preId : preIds) {
-				retString += " " + preId;
+		StringJoiner sj1 = new StringJoiner("\n");
+		sj1.add("강좌번호: " + course.getCourseId());
+		sj1.add("강좌명: " + course.getCourseName());
+		sj1.add("담당교수: " + course.getProfName());
+		StringJoiner sj2 = new StringJoiner(" ");
+		if(course.getPrerequisiteCount() > 0) {
+			sj2.add("선수과목:");
+			for(String courseID: course.getPrerequisiteList()) {
+				sj2.add(courseID);
 			}
-			retString += " }";
 		}
-		return retString + "]";
+		return sj1.merge(sj2).toString();
 	}
 	
 	public static String toString(Course[] courses) {
-		StringJoiner sj = new StringJoiner("\n");
+		StringJoiner sj = new StringJoiner("\n\n");
 		for(Course course : courses) {
 			sj.add(toString(course));
 		}
@@ -36,16 +32,16 @@ public final class PrintFormat {
 	
 	public static String toString(Student student) {
 		StringJoiner sj1 = new StringJoiner("\n");
-		sj1.add("Student ID: " + student.getStudentId());
-		sj1.add("Name: " + student.getLastName() + " " + student.getFirstName());
-		sj1.add("Count. applied courses: " + student.getCourseIdCount());
-		sj1.add("Applied courses:");
+		sj1.add("학번: " + student.getStudentId());
+		sj1.add("이름: " + student.getLastName() + " " + student.getFirstName());
 		StringJoiner sj2 = new StringJoiner(" ");
-		sj2.add(sj1.toString());
-		for(String courseID: student.getCourseIdList()) {
-			sj2.add(courseID);
+		if(student.getCourseIdCount() > 0) {
+			sj2.add("기수강 강좌 내역:");
+			for(String courseID: student.getCourseIdList()) {
+				sj2.add(courseID);
+			}
 		}
-		return sj2.toString();
+		return sj1.merge(sj2).toString();
 	}
 	
 	public static String toString (Student[] students) {
